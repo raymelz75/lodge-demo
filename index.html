@@ -3,297 +3,396 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Demo of a fictional lodge: keep it out of search results -->
+  <!-- Demo lodge website: keep it out of search results -->
   <meta name="robots" content="noindex, nofollow">
-  <title>Jyothi Giri Residency, Tiruvannamalai | Demo Lodge Website by Raymelz</title>
+  <title>Raymelz Lodge, Tiruvannamalai | Demo Lodge Website by Raymelz</title>
   <meta name="description" content="Demo lodge website by Raymelz: rooms near Arunachaleswarar Temple, Karthigai Deepam 2026 stay, Pournami Girivalam dates, group dormitory and WhatsApp booking.">
-  <meta property="og:title" content="Jyothi Giri Residency, Tiruvannamalai (Demo by Raymelz)">
+  <meta property="og:title" content="Raymelz Lodge, Tiruvannamalai (Demo by Raymelz)">
   <meta property="og:description" content="See how a Tiruvannamalai lodge website brings direct bookings: rooms, Deepam 2026, Girivalam dates and WhatsApp booking.">
   <meta property="og:image" content="https://raymelz75.github.io/lodge-demo/images/og.jpg">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#5a1414">
+  <meta name="theme-color" content="#141110">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Noto+Sans+Tamil:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet">
   <style>
-    :root { --maroon: #5a1414; --maroon-2: #7a1f1a; --saffron: #e0761b; --gold: #d9a63a; --gold-2: #f3cf7a; --cream: #fbf6ee; --stone: #f3ebdf;
-      --ink: #26170f; --muted: #6c5a4e; --line: #eadfce; --radius: 16px; }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: "Inter", system-ui, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; padding-bottom: 54px; }
+    :root {
+      --bg: #f6f3ee; --paper: #fff; --ink: #141110; --ink-2: #3b3531; --muted: #7a726b; --line: #e4ddd3; --line-2: #d6cec2;
+      --accent: #c2410c; --accent-2: #9a3412; --accent-soft: #fbeee6; --night: #0e0b09; --moon: #f2cf7d;
+      --r: 12px; --wrap: 1240px; --pad: clamp(20px, 4vw, 40px);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; font: 400 17px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; font-optical-sizing: auto; font-feature-settings: "cv11", "ss01";
+      color: var(--ink-2); background: var(--bg); -webkit-font-smoothing: antialiased; padding-bottom: 44px; }
     img { max-width: 100%; display: block; height: auto; }
     a { color: inherit; }
-    h1, h2, h3 { font-family: "Playfair Display", "Inter", Georgia, serif; line-height: 1.15; margin: 0 0 .4em; }
-    .rs { font-family: "Inter", sans-serif; font-weight: 700; }
-    h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); color: var(--maroon); }
-    .ta { font-family: "Noto Sans Tamil", "Inter", sans-serif; }
-    .container { width: min(1180px, 100% - 40px); margin: 0 auto; }
-    .section { padding: 90px 0; }
-    .alt { background: var(--stone); }
-    .eyebrow { display: inline-block; font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--saffron); margin-bottom: 10px; }
-    .head { max-width: 700px; margin: 0 auto 46px; text-align: center; }
-    .head p { color: var(--muted); font-size: 1.05rem; margin: 0; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border-radius: 999px; border: 0; font: 600 .98rem "Inter", sans-serif; cursor: pointer; text-decoration: none; transition: transform .2s, background .2s, box-shadow .2s; }
-    .btn:hover { transform: translateY(-2px); }
-    .btn-gold { background: linear-gradient(135deg, var(--gold-2), var(--gold)); color: #2a1709; box-shadow: 0 8px 22px rgba(217, 166, 58, .35); }
-    .btn-maroon { background: var(--maroon); color: #fff; }
-    .btn-outline { background: transparent; border: 1.5px solid var(--maroon); color: var(--maroon); }
+    button { font: inherit; }
+    h1, h2, h3 { color: var(--ink); font-weight: 700; margin: 0; letter-spacing: -0.035em; line-height: 1.04; }
+    h2 { font-size: clamp(2rem, 4.6vw, 3.5rem); }
+    h3 { font-size: 1.3rem; letter-spacing: -0.02em; line-height: 1.2; }
+    p { margin: 0 0 1em; }
+    .ta { font-family: "Noto Sans Tamil", "Inter", sans-serif; letter-spacing: 0; }
+    .num { font-variant-numeric: tabular-nums; }
+    .wrap { width: min(var(--wrap), 100% - 2 * var(--pad)); margin: 0 auto; }
+    .sec { padding: clamp(72px, 10vw, 128px) 0; }
+    .kicker { display: block; font-size: .8rem; font-weight: 600; color: var(--accent); letter-spacing: .02em; margin-bottom: 18px; }
+    .row-head { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: end; margin-bottom: clamp(36px, 5vw, 64px); }
+    .row-head p { color: var(--muted); max-width: 460px; margin: 0; justify-self: end; }
+    .ic { width: 22px; height: 22px; flex: none; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 10px; border: 1px solid transparent;
+      font-weight: 600; font-size: .95rem; text-decoration: none; cursor: pointer; transition: background .2s, color .2s, border-color .2s, transform .2s; white-space: nowrap; }
+    .btn .ic { width: 18px; height: 18px; transition: transform .2s; }
+    .btn:hover .ic { transform: translateX(3px); }
+    .btn-ink { background: var(--ink); color: #fff; }
+    .btn-ink:hover { background: var(--accent); }
+    .btn-line { border-color: var(--line-2); color: var(--ink); background: transparent; }
+    .btn-line:hover { border-color: var(--ink); }
+    .btn-light { background: #fff; color: var(--ink); }
+    .btn-light:hover { background: var(--moon); }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     /* Header */
-    .site-header { position: fixed; inset: 0 0 auto; z-index: 50; transition: background .3s, box-shadow .3s; }
-    .site-header.solid { background: rgba(251, 246, 238, .96); box-shadow: 0 4px 20px rgba(0, 0, 0, .08); backdrop-filter: blur(8px); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-    .solid .logo { color: var(--maroon); }
-    .logo svg { width: 40px; height: 40px; flex: none; }
-    .logo b { display: block; font: 700 1.2rem "Playfair Display", serif; line-height: 1.05; }
-    .logo small { display: block; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; opacity: .85; }
-    .menu { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
-    .menu a { color: #fff; text-decoration: none; font-weight: 500; font-size: .95rem; }
-    .solid .menu a { color: var(--ink); }
-    .menu .btn { color: #2a1709; padding: 10px 20px; }
-    .burger { display: none; background: none; border: 0; color: #fff; padding: 8px; cursor: pointer; }
-    .solid .burger { color: var(--maroon); }
+    .hdr { position: fixed; inset: 0 0 auto; z-index: 50; color: #fff; transition: background .3s, color .3s, box-shadow .3s; }
+    .hdr.solid { background: rgba(246, 243, 238, .92); color: var(--ink); box-shadow: 0 1px 0 var(--line); backdrop-filter: saturate(1.4) blur(12px); }
+    .hdr .wrap { display: flex; align-items: center; height: 72px; gap: 32px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; letter-spacing: -0.02em; font-size: 1.08rem; }
+    .brand svg { width: 30px; height: 30px; }
+    .hdr .hm { fill: var(--ink); transition: fill .3s; }
+    .hdr.solid .hm, .hdr.open .hm { fill: var(--bg); }
+    .brand small { display: block; font-size: .68rem; font-weight: 500; letter-spacing: .04em; opacity: .7; margin-top: -2px; }
+    .nav { display: flex; gap: 28px; margin-left: auto; list-style: none; padding: 0; margin-top: 0; margin-bottom: 0; }
+    .nav a { text-decoration: none; font-size: .93rem; font-weight: 500; opacity: .85; }
+    .nav a:hover { opacity: 1; }
+    .hdr .btn { height: 42px; padding: 0 18px; }
+    .hdr:not(.solid) .btn-ink { background: #fff; color: var(--ink); }
+    .menu-btn { display: none; margin-left: auto; background: none; border: 0; color: inherit; width: 44px; height: 44px; padding: 10px; cursor: pointer; }
 
     /* Hero */
-    .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; color: #fff; overflow: hidden; background: #2b1a10; }
+    .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; background: #2a1f18; overflow: hidden; }
     .hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30, 10, 5, .62) 0%, rgba(30, 10, 5, .28) 42%, rgba(30, 10, 5, .78) 100%); }
-    .hero .container { position: relative; z-index: 1; padding: 120px 0 60px; }
-    .hero .eyebrow { color: var(--gold-2); }
-    .hero .ta-line { font-size: 1.05rem; color: var(--gold-2); margin: 0 0 6px; font-weight: 500; }
-    .hero h1 { font-size: clamp(2.5rem, 7vw, 4.8rem); max-width: 780px; text-shadow: 0 4px 30px rgba(0, 0, 0, .4); }
-    .hero p.lead { max-width: 610px; font-size: 1.15rem; color: rgba(255, 255, 255, .93); margin: 0 0 18px; }
-    .moon-chip { display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(6px); border-radius: 999px; padding: 8px 16px 8px 10px; font-size: .95rem; margin: 0 0 24px; text-decoration: none; }
-    .moon-chip .moon { width: 24px; height: 24px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #fffbe9, #f3d98a 60%, #c99b3b); box-shadow: 0 0 18px rgba(255, 226, 140, .9); flex: none; }
-    .moon-chip b { color: var(--gold-2); }
-    .booking-bar { display: grid; grid-template-columns: repeat(3, 1fr) auto; gap: 10px; background: rgba(255, 255, 255, .97); color: var(--ink); padding: 14px; border-radius: 18px; max-width: 840px; box-shadow: 0 20px 50px rgba(0, 0, 0, .3); }
-    .booking-bar label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-    .booking-bar input, .booking-bar select { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font: 500 .95rem "Inter", sans-serif; background: #fff; color: var(--ink); }
-    .booking-bar .btn { align-self: end; height: 46px; }
-    .booking-bar > div { min-width: 0; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12, 8, 6, .6) 0%, rgba(12, 8, 6, .28) 45%, rgba(12, 8, 6, 0) 72%), linear-gradient(180deg, rgba(12, 8, 6, .45) 0%, rgba(12, 8, 6, 0) 24%, rgba(12, 8, 6, .2) 55%, rgba(12, 8, 6, .86) 100%); }
+    .hero-in { position: relative; z-index: 1; padding: 140px 0 76px; }
+    .hero-in p, .hero-moon, .hero .ta, .hero-meta { text-shadow: 0 1px 14px rgba(0, 0, 0, .35); }
+    .hero-moon { display: inline-flex; align-items: center; gap: 10px; font-size: .9rem; color: rgba(255, 255, 255, .9); text-decoration: none; margin-bottom: 22px; }
+    .hero-moon i { width: 12px; height: 12px; border-radius: 50%; background: var(--moon); box-shadow: 0 0 0 4px rgba(242, 207, 125, .2), 0 0 18px rgba(242, 207, 125, .8); }
+    .hero-moon b { font-weight: 600; color: #fff; }
+    .hero .ta { display: block; font-size: 1rem; color: rgba(255, 255, 255, .85); margin-bottom: 10px; }
+    .hero h1 { color: #fff; font-size: clamp(2.9rem, 8.2vw, 7rem); letter-spacing: -0.05em; line-height: .95; max-width: 11ch; font-weight: 700; }
+    .hero-low { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-top: 28px; }
+    .hero-low p { max-width: 520px; font-size: 1.08rem; color: rgba(255, 255, 255, .88); margin: 0; }
+    .hero-meta { display: flex; gap: 36px; font-size: .85rem; color: rgba(255, 255, 255, .75); }
+    .hero-meta b { display: block; font-size: 1.5rem; font-weight: 650; color: #fff; letter-spacing: -0.03em; }
+    .finder { position: relative; z-index: 2; margin-top: 36px; background: #fff; color: var(--ink); border-radius: 14px; display: grid; grid-template-columns: repeat(4, 1fr) auto; box-shadow: 0 24px 60px rgba(0, 0, 0, .28); }
+    .finder label { display: block; padding: 14px 20px; border-right: 1px solid var(--line); cursor: pointer; min-width: 0; }
+    .finder span { display: block; font-size: .75rem; font-weight: 600; color: var(--muted); margin-bottom: 2px; }
+    .finder input, .finder select { width: 100%; border: 0; padding: 0; font: 500 .98rem "Inter", sans-serif; color: var(--ink); background: transparent; outline: none; appearance: none; -webkit-appearance: none; min-height: 26px; }
+    .finder .btn { margin: 8px; height: auto; border-radius: 10px; padding: 0 26px; }
 
-    .strip { background: var(--maroon); color: #fff; }
-    .strip ul { list-style: none; margin: 0; padding: 18px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 34px; font-weight: 500; }
+    /* Intro */
+    .intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(40px, 7vw, 110px); align-items: start; }
+    .intro .lead { font-size: clamp(1.45rem, 2.6vw, 2.15rem); line-height: 1.32; color: var(--ink); font-weight: 500; letter-spacing: -0.025em; margin: 0; }
+    .intro .lead em { font-style: normal; color: var(--accent); }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-2); }
+    .stats div { padding: 22px 0 22px; border-bottom: 1px solid var(--line); }
+    .stats div:nth-child(odd) { padding-right: 20px; border-right: 1px solid var(--line); }
+    .stats div:nth-child(even) { padding-left: 24px; }
+    .stats b { display: block; font-size: 2.3rem; font-weight: 650; color: var(--ink); letter-spacing: -0.04em; line-height: 1.1; }
+    .stats span { font-size: .9rem; color: var(--muted); }
+    .intro-img { margin-top: clamp(48px, 7vw, 90px); display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+    .intro-img img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r); aspect-ratio: 16 / 9; }
+    .intro-img img + img { aspect-ratio: auto; }
 
-    /* Split */
-    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
-    .split > img, .split .pic img { border-radius: 22px; box-shadow: 0 24px 60px rgba(0, 0, 0, .15); aspect-ratio: 4 / 3; object-fit: cover; width: 100%; }
-    .split p { color: var(--muted); }
-    .facts { display: flex; gap: 30px; margin-top: 24px; flex-wrap: wrap; }
-    .facts b { display: block; font: 700 1.8rem "Playfair Display", serif; color: var(--maroon); }
-    .facts span { font-size: .9rem; color: var(--muted); }
-
-    /* Cards */
-    .grid { display: grid; gap: 24px; }
-    .g3 { grid-template-columns: repeat(3, 1fr); }
-    .g4 { grid-template-columns: repeat(4, 1fr); }
-    .card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: 0 10px 30px rgba(90, 20, 20, .08); display: flex; flex-direction: column; }
-    .card .ph { overflow: hidden; aspect-ratio: 16 / 10; }
-    .card .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-    .card:hover .ph img { transform: scale(1.06); }
-    .card .body { padding: 20px 20px 22px; display: flex; flex-direction: column; flex: 1; }
-    .card h3 { font-size: 1.25rem; color: var(--maroon); }
-    .card p { color: var(--muted); margin: 0 0 14px; font-size: .95rem; }
-    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; padding: 0; list-style: none; }
-    .chips li { font-size: .78rem; background: var(--stone); color: var(--maroon); border-radius: 999px; padding: 4px 10px; font-weight: 600; }
-    .price { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-    .price b { font-size: 1.3rem; color: var(--ink); }
-    .price small { color: var(--muted); font-weight: 500; font-size: .8rem; }
-    .price .btn { padding: 10px 18px; font-size: .92rem; }
-    .dorm { margin-top: 26px; display: grid; grid-template-columns: 1.1fr 1fr; background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 16px 40px rgba(90, 20, 20, .1); border: 1.5px solid var(--gold-2); }
-    .dorm img { width: 100%; height: 100%; object-fit: cover; min-height: 280px; }
-    .dorm .body { padding: 32px; }
-    .dorm .tag { display: inline-block; background: var(--gold); color: #2a1709; font-size: .74rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
-    .dorm h3 { font-size: 1.6rem; color: var(--maroon); }
-    .dorm ul { padding: 0; margin: 12px 0 20px; list-style: none; display: grid; gap: 6px; color: var(--muted); }
-    .dorm li::before { content: "✓"; color: var(--saffron); font-weight: 800; margin-right: 8px; }
-    .dorm .amt { font: 700 1.8rem "Playfair Display", serif; color: var(--maroon); }
-    .dorm .amt small { font: 500 .9rem "Inter", sans-serif; color: var(--muted); }
-    .rate-note { text-align: center; color: var(--muted); font-size: .92rem; margin: 22px auto 0; max-width: 700px; }
-    .rate-note b { color: var(--maroon); }
+    /* Rooms switcher */
+    .rooms { background: var(--paper); }
+    .switch { display: grid; grid-template-columns: 340px 1fr; gap: clamp(24px, 4vw, 56px); }
+    .tabs { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+    .tab { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 20px 4px; cursor: pointer; color: var(--muted); position: relative; transition: color .2s; }
+    .tab b { font-weight: 600; font-size: 1.05rem; letter-spacing: -0.015em; }
+    .tab span { font-size: .9rem; font-variant-numeric: tabular-nums; }
+    .tab::before { content: ""; position: absolute; left: -1px; top: -1px; bottom: -1px; width: 2px; background: var(--accent); transform: scaleY(0); transition: transform .3s; }
+    .tab:hover { color: var(--ink); }
+    .tab[aria-selected="true"] { color: var(--ink); padding-left: 18px; }
+    .tab[aria-selected="true"]::before { transform: scaleY(1); }
+    .panel { display: none; grid-template-columns: 1.35fr 1fr; gap: 32px; animation: fade .45s ease; }
+    .panel.on { display: grid; }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    .panel .pic { border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 3.2; }
+    .panel .pic img { width: 100%; height: 100%; object-fit: cover; }
+    .panel .meta { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 16px; font-size: .85rem; color: var(--muted); }
+    .panel .meta span + span::before { content: "·"; margin-right: 8px; color: var(--line-2); }
+    .panel ul { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 10px; }
+    .panel li { display: flex; gap: 10px; align-items: center; font-size: .95rem; color: var(--ink-2); }
+    .panel li .ic { width: 18px; height: 18px; color: var(--accent); }
+    .price { display: flex; align-items: baseline; gap: 6px; margin: 0 0 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .price b { font-size: 2.2rem; font-weight: 650; color: var(--ink); letter-spacing: -0.04em; }
+    .price span { color: var(--muted); font-size: .9rem; }
+    .rooms-note { margin: 36px 0 0; font-size: .9rem; color: var(--muted); }
+    .rooms-note b { color: var(--ink); font-weight: 600; }
 
     /* Deepam */
-    .deepam { position: relative; color: #fff; overflow: hidden; background: #140806; }
-    .deepam .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; }
-    .deepam::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(255, 150, 40, .35), transparent 60%), linear-gradient(180deg, rgba(20, 8, 6, .55), rgba(20, 8, 6, .92)); z-index: 1; }
-    .deepam .container { position: relative; z-index: 2; }
-    .deepam h2 { color: #fff; }
-    .deepam .eyebrow { color: var(--gold-2); }
-    .deepam .head p { color: rgba(255, 255, 255, .85); }
-    .flame { width: 56px; height: 80px; margin: 0 auto 18px; position: relative; }
-    .flame span { position: absolute; left: 50%; bottom: 0; width: 34px; height: 64px; margin-left: -17px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: radial-gradient(ellipse at 50% 75%, #fff6c8 0%, #ffd24a 30%, #ff8a1c 62%, rgba(255, 80, 0, 0) 75%); filter: blur(.5px); animation: flick 1.6s ease-in-out infinite alternate; transform-origin: 50% 100%; }
-    .flame::after { content: ""; position: absolute; left: 50%; bottom: -8px; width: 120px; height: 120px; margin-left: -60px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 170, 60, .45), transparent 65%); animation: glow 2.4s ease-in-out infinite alternate; }
-    @keyframes flick { 0% { transform: scale(1, 1) rotate(-1.5deg); } 50% { transform: scale(.95, 1.06) rotate(1.5deg); } 100% { transform: scale(1.03, .96) rotate(-1deg); } }
-    @keyframes glow { from { opacity: .6; transform: scale(.92); } to { opacity: 1; transform: scale(1.08); } }
-    .countdown { display: flex; justify-content: center; gap: 14px; margin: 0 0 40px; flex-wrap: wrap; }
-    .countdown div { min-width: 92px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(243, 207, 122, .35); border-radius: 16px; padding: 14px 10px; text-align: center; }
-    .countdown b { display: block; font: 700 2.4rem "Playfair Display", serif; color: var(--gold-2); line-height: 1.1; }
-    .countdown span { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .75); }
-    .deepam-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: start; }
-    .timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-    .timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); border-radius: 14px; padding: 14px 18px; }
-    .timeline b { color: var(--gold-2); }
-    .timeline span { color: rgba(255, 255, 255, .88); }
-    .deepam-pack { background: #fff; color: var(--ink); border-radius: 20px; padding: 28px; box-shadow: 0 30px 70px rgba(0, 0, 0, .4); border-top: 5px solid var(--gold); }
-    .deepam-pack h3 { color: var(--maroon); font-size: 1.5rem; }
-    .deepam-pack ul { padding: 0; margin: 12px 0 18px; list-style: none; display: grid; gap: 6px; color: var(--muted); }
-    .deepam-pack li::before { content: "✓"; color: var(--saffron); font-weight: 800; margin-right: 8px; }
-    .deepam-pack .amt { font: 700 2rem "Playfair Display", serif; color: var(--maroon); }
-    .deepam-pack .amt small { font: 500 .9rem "Inter", sans-serif; color: var(--muted); }
-    .deepam-pack .btn { width: 100%; margin-top: 8px; }
-    .src-note { color: rgba(255, 255, 255, .6); font-size: .82rem; margin-top: 22px; text-align: center; }
+    .deepam { background: var(--night); color: rgba(255, 255, 255, .78); position: relative; overflow: hidden; }
+    .deepam h2, .deepam h3 { color: #fff; }
+    .deepam .kicker { color: var(--moon); }
+    .dp-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+    .dp-date { font-size: clamp(4.2rem, 11vw, 9.5rem); font-weight: 700; letter-spacing: -0.065em; line-height: .86; color: #fff; margin: 0 0 22px; }
+    .dp-date small { display: block; font-size: clamp(1rem, 1.6vw, 1.25rem); letter-spacing: -0.01em; font-weight: 500; color: rgba(255, 255, 255, .65); margin-top: 16px; line-height: 1.4; }
+    .cd { display: flex; gap: 0; margin: 28px 0 0; border: 1px solid rgba(255, 255, 255, .14); border-radius: var(--r); width: max-content; max-width: 100%; }
+    .cd div { padding: 14px 22px; border-right: 1px solid rgba(255, 255, 255, .14); }
+    .cd div:last-child { border-right: 0; }
+    .cd b { display: block; font-size: 2rem; font-weight: 600; color: #fff; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; line-height: 1.1; }
+    .cd span { font-size: .75rem; color: rgba(255, 255, 255, .55); }
+    .dp-pic { position: relative; margin: 0; border-radius: var(--r); overflow: hidden; aspect-ratio: 4 / 5; }
+    .dp-pic img { width: 100%; height: 100%; object-fit: cover; }
+    .dp-pic::after { content: ""; position: absolute; left: 50%; top: 38%; width: 160px; height: 160px; margin: -80px 0 0 -80px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 180, 70, .55), rgba(255, 140, 40, 0) 65%); animation: glow 2.6s ease-in-out infinite alternate; mix-blend-mode: screen; }
+    @keyframes glow { from { opacity: .55; transform: scale(.9); } to { opacity: 1; transform: scale(1.12); } }
+    .dp-pic::before { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 38%; background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .75)); z-index: 1; }
+    .dp-pic figcaption { position: absolute; left: 16px; bottom: 14px; z-index: 2; font-size: .8rem; color: rgba(255, 255, 255, .88); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: clamp(56px, 7vw, 90px); border-top: 1px solid rgba(255, 255, 255, .14); }
+    .steps div { padding: 22px 22px 0 0; position: relative; }
+    .steps div::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--moon); }
+    .steps b { display: block; color: #fff; font-weight: 600; margin-bottom: 4px; }
+    .steps span { font-size: .92rem; }
+    .pack { margin-top: clamp(48px, 6vw, 72px); display: grid; grid-template-columns: 1fr auto auto; gap: 32px; align-items: center; padding: 28px 32px; border-radius: var(--r); background: rgba(255, 255, 255, .06); border: 1px solid rgba(255, 255, 255, .12); }
+    .pack p { margin: 6px 0 0; font-size: .95rem; }
+    .pack .amt { color: #fff; font-size: 2rem; font-weight: 650; letter-spacing: -0.04em; white-space: nowrap; }
+    .pack .amt span { font-size: .85rem; font-weight: 400; color: rgba(255, 255, 255, .6); letter-spacing: 0; }
+    .src { margin: 22px 0 0; font-size: .8rem; color: rgba(255, 255, 255, .45); }
 
     /* Girivalam */
-    .lingams { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 18px; padding: 0; list-style: none; }
-    .lingams li { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: .85rem; font-weight: 600; color: var(--maroon); }
-    .tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-    .tips li { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 12px 14px; border: 1px solid var(--line); color: var(--ink); }
-    .moons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 44px; }
-    .moon-card { background: #fff; border-radius: 16px; padding: 18px 18px 16px; border: 1.5px solid var(--line); position: relative; transition: transform .2s, box-shadow .2s; }
-    .moon-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(90, 20, 20, .1); }
-    .moon-card .m { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--saffron); }
-    .moon-card .d { font: 700 1.2rem "Playfair Display", serif; color: var(--maroon); margin: 4px 0 2px; }
-    .moon-card .t { font-size: .85rem; color: var(--muted); }
-    .moon-card .special { display: inline-block; margin-top: 8px; font-size: .75rem; font-weight: 700; color: #2a1709; background: var(--gold-2); border-radius: 999px; padding: 3px 10px; }
-    .moon-card.next { border-color: var(--gold); box-shadow: 0 16px 34px rgba(217, 166, 58, .28); }
-    .moon-card.past { opacity: .45; }
-    .moon-card .nextb { position: absolute; top: -11px; right: 14px; background: var(--maroon); color: #fff; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border-radius: 999px; display: none; }
-    .moon-card.next .nextb { display: block; }
-    .moons-note { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 16px; }
+    .giri { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+    .giri-svg { width: 100%; height: auto; overflow: visible; }
+    .route-bg { fill: none; stroke: var(--line); stroke-width: 14; }
+    .route { fill: none; stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 100; stroke-dashoffset: 100; transform: rotate(0deg); transform-origin: 260px 260px; }
+    .giri-on .route { animation: draw 2.4s cubic-bezier(.6, 0, .3, 1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .arr { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .hill { fill: #2b2420; } .snow { fill: #5a4d44; }
+    .flame { fill: #f59e0b; filter: drop-shadow(0 0 6px rgba(245, 158, 11, .9)); }
+    .hill-t { font: 650 15px "Inter", sans-serif; fill: var(--ink); letter-spacing: -0.01em; }
+    .hill-s { font: 500 12px "Inter", sans-serif; fill: var(--muted); }
+    .lg-dot { fill: #fff; stroke: var(--ink); stroke-width: 2; }
+    .lg-t { font: 600 14px "Inter", sans-serif; fill: var(--ink); }
+    .lg { opacity: 0; transition: opacity .5s ease var(--d); }
+    .giri-on .lg { opacity: 1; }
+    .tag-bg { fill: var(--ink); width: 118px; } .tag-t { font: 600 12px "Inter", sans-serif; fill: #fff; }
+    .pin { fill: var(--accent); } .pin-t { font: 650 13px "Inter", sans-serif; fill: var(--accent); }
+    .giri-facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-2); margin: 28px 0; }
+    .giri-facts div { padding: 16px 16px 0 0; }
+    .giri-facts b { display: block; font-size: 1.6rem; font-weight: 650; color: var(--ink); letter-spacing: -0.035em; }
+    .giri-facts span { font-size: .85rem; color: var(--muted); }
+    .tips { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .tips li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+    .tips .ic { color: var(--accent); margin-top: 2px; }
 
-    /* Facilities + food */
-    .fac { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-    .fac div { background: #fff; border-radius: 16px; padding: 20px; border: 1px solid var(--line); }
-    .fac .ic { font-size: 1.6rem; display: block; margin-bottom: 8px; }
-    .fac b { display: block; color: var(--maroon); margin-bottom: 4px; }
-    .fac span { color: var(--muted); font-size: .92rem; }
-    .food { margin-top: 50px; }
-    .food .card .ph { aspect-ratio: 4 / 3; }
+    /* Pournami table */
+    .moons { margin-top: clamp(64px, 8vw, 110px); }
+    .mt { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+    .mt th { text-align: left; font-size: .78rem; font-weight: 600; color: var(--muted); padding: 0 16px 12px 0; border-bottom: 1px solid var(--line-2); }
+    .mt td { padding: 18px 16px 18px 0; border-bottom: 1px solid var(--line); vertical-align: middle; }
+    .mt td:first-child { font-weight: 600; color: var(--ink); }
+    .mt .when { font-size: 1.15rem; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; }
+    .mt .peak { color: var(--muted); font-size: .92rem; }
+    .mt .tg { display: inline-block; font-size: .78rem; font-weight: 600; color: var(--accent-2); background: var(--accent-soft); padding: 4px 10px; border-radius: 6px; }
+    .mt tr.next td { background: linear-gradient(90deg, var(--accent-soft), rgba(251, 238, 230, 0)); }
+    .mt tr.next td:first-child { box-shadow: inset 3px 0 0 var(--accent); padding-left: 14px; }
+    .mt tr.past { opacity: .4; }
+    .mt .nx { display: none; margin-left: 8px; font-size: .72rem; font-weight: 700; color: #fff; background: var(--accent); padding: 3px 8px; border-radius: 5px; vertical-align: 2px; }
+    .mt tr.next .nx { display: inline-block; }
+    .mt-note { margin: 16px 0 0; font-size: .85rem; color: var(--muted); }
 
-    /* Gallery */
-    .gallery { columns: 4 240px; column-gap: 14px; }
-    .gallery button { display: block; width: 100%; margin: 0 0 14px; padding: 0; border: 0; border-radius: 14px; overflow: hidden; cursor: zoom-in; break-inside: avoid; background: none; }
-    .gallery img { width: 100%; transition: transform .5s ease; }
-    .gallery button:hover img { transform: scale(1.05); }
-    .lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(20, 8, 6, .93); display: none; align-items: center; justify-content: center; padding: 20px; }
+    /* Amenities */
+    .amen { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-2); border-left: 1px solid var(--line); }
+    .amen div { padding: 28px 26px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s; }
+    .amen div:hover { background: var(--paper); }
+    .amen .ic { width: 28px; height: 28px; color: var(--accent); margin-bottom: 18px; }
+    .amen b { display: block; color: var(--ink); font-weight: 600; margin-bottom: 4px; letter-spacing: -0.01em; }
+    .amen span { font-size: .9rem; color: var(--muted); }
+    .food { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(56px, 7vw, 90px); }
+    .food figure { margin: 0; }
+    .food img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--r); }
+    .food figcaption { margin-top: 12px; font-size: .92rem; color: var(--muted); }
+    .food figcaption b { color: var(--ink); font-weight: 600; margin-right: 6px; }
+    .food-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-top: clamp(64px, 8vw, 110px); }
+    .food-head + .food { margin-top: 28px; }
+    .food-head h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); letter-spacing: -0.03em; }
+    .food-head p { margin: 0; color: var(--muted); max-width: 420px; }
+
+    /* Bento gallery */
+    .bento { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: clamp(150px, 16vw, 220px); grid-auto-flow: dense; gap: 12px; }
+    .bento button { padding: 0; border: 0; border-radius: var(--r); overflow: hidden; cursor: zoom-in; background: #ddd; }
+    .bento img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2, .7, .2, 1); }
+    .bento button:hover img { transform: scale(1.04); }
+    .bento .w2 { grid-column: span 2; } .bento .h2 { grid-row: span 2; }
+    .lightbox { position: fixed; inset: 0; z-index: 80; background: rgba(10, 8, 6, .94); display: none; align-items: center; justify-content: center; padding: 24px; }
     .lightbox.open { display: flex; }
-    .lightbox img { max-height: 86vh; border-radius: 12px; width: auto; }
-    .lightbox button { position: absolute; top: 18px; right: 22px; background: none; border: 0; color: #fff; font-size: 2.2rem; cursor: pointer; }
+    .lightbox img { max-height: 86vh; width: auto; border-radius: 8px; }
+    .lightbox button { position: absolute; top: 14px; right: 16px; width: 44px; height: 44px; background: none; border: 0; color: #fff; font-size: 2rem; cursor: pointer; }
 
     /* Reviews */
-    .review { background: #fff; border-radius: var(--radius); padding: 26px; box-shadow: 0 10px 30px rgba(90, 20, 20, .07); }
-    .review .stars { color: var(--gold); letter-spacing: 2px; }
-    .review p { color: var(--ink); font-style: italic; }
-    .review b { color: var(--maroon); }
-    .note { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 18px; }
+    .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .reviews figure { margin: 0; padding-top: 22px; border-top: 1px solid var(--ink); }
+    .reviews blockquote { margin: 0 0 18px; font-size: 1.12rem; line-height: 1.5; color: var(--ink); letter-spacing: -0.015em; font-weight: 500; }
+    .reviews figcaption { font-size: .88rem; color: var(--muted); }
+    .reviews figcaption b { color: var(--ink); font-weight: 600; }
+    .sample { margin: 28px 0 0; font-size: .8rem; color: var(--muted); }
 
     /* Location */
-    .map { border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0, 0, 0, .12); min-height: 380px; }
-    .map iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
-    .routes { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 10px; }
-    .routes li { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 12px; padding: 11px 14px; border: 1px solid var(--line); }
-    .routes b { color: var(--maroon); }
+    .loc { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(40px, 6vw, 80px); align-items: stretch; }
+    .dl { margin: 28px 0 0; border-top: 1px solid var(--line-2); }
+    .dl div { display: flex; align-items: baseline; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .dl dt { color: var(--ink); font-weight: 500; }
+    .dl dt::after { content: ""; }
+    .dl i { flex: 1; border-bottom: 1px dotted var(--line-2); transform: translateY(-4px); }
+    .dl dd { margin: 0; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+    .map { border-radius: var(--r); overflow: hidden; min-height: 440px; background: #e9e4dc; }
+    .map iframe { width: 100%; height: 100%; min-height: 440px; border: 0; display: block; filter: grayscale(.35) contrast(1.02); }
 
     /* FAQ */
-    .faq { max-width: 800px; margin: 0 auto; }
-    .faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 12px; }
-    .faq summary { cursor: pointer; padding: 16px 20px; font-weight: 600; list-style: none; position: relative; padding-right: 48px; }
-    .faq summary::-webkit-details-marker { display: none; }
-    .faq summary::after { content: "+"; position: absolute; right: 20px; top: 12px; font-size: 1.4rem; color: var(--maroon); }
-    .faq details[open] summary::after { content: "−"; }
-    .faq details p { margin: 0; padding: 0 20px 16px; color: var(--muted); }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: clamp(40px, 6vw, 90px); }
+    .faq-grid > div:first-child p { color: var(--muted); margin-top: 18px; }
+    .qa { border-top: 1px solid var(--line-2); }
+    .qa details { border-bottom: 1px solid var(--line); }
+    .qa summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font-weight: 600; color: var(--ink); font-size: 1.05rem; letter-spacing: -0.01em; }
+    .qa summary::-webkit-details-marker { display: none; }
+    .qa summary .ic { width: 20px; height: 20px; transition: transform .3s; color: var(--muted); }
+    .qa details[open] summary .ic { transform: rotate(45deg); color: var(--accent); }
+    .qa p { margin: -6px 0 22px; color: var(--muted); max-width: 620px; }
 
     /* Booking */
-    .book { background: linear-gradient(135deg, var(--maroon), #2e0b09); color: #fff; }
-    .book h2 { color: #fff; }
-    .book .eyebrow { color: var(--gold-2); }
-    .book .head p { color: rgba(255, 255, 255, .85); }
-    form.request { max-width: 840px; margin: 0 auto; background: #fff; color: var(--ink); border-radius: 22px; padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; box-shadow: 0 30px 70px rgba(0, 0, 0, .3); }
-    form.request label { font-size: .82rem; font-weight: 600; color: var(--muted); display: block; margin-bottom: 5px; }
-    form.request input, form.request select, form.request textarea { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; font: 500 .96rem "Inter", sans-serif; color: var(--ink); background: #fdfaf5; }
-    form.request .full { grid-column: 1 / -1; }
-    form.request .btn { width: 100%; height: 50px; font-size: 1.02rem; }
-    .done { display: none; max-width: 840px; margin: 0 auto; background: #fff; color: var(--ink); border-radius: 22px; padding: 34px; text-align: center; }
+    .book { background: var(--paper); }
+    .book-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(40px, 6vw, 90px); }
+    .book-info { display: grid; gap: 0; margin-top: 30px; border-top: 1px solid var(--line-2); }
+    .book-info div { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+    .book-info b { color: var(--ink); font-weight: 600; }
+    form.req { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; }
+    form.req label { display: block; font-size: .82rem; font-weight: 600; color: var(--ink); }
+    form.req input, form.req select, form.req textarea { display: block; width: 100%; margin-top: 8px; border: 1px solid var(--line-2); border-radius: 10px; padding: 12px 14px; font: 400 1rem "Inter", sans-serif; color: var(--ink); background: var(--bg); transition: border-color .2s, background .2s; }
+    form.req input:focus, form.req select:focus, form.req textarea:focus { outline: none; border-color: var(--ink); background: #fff; }
+    form.req .full { grid-column: 1 / -1; }
+    form.req .btn { width: 100%; height: 52px; }
+    .fine { font-size: .82rem; color: var(--muted); margin: 0; }
+    .done { display: none; padding: 32px; border: 1px solid var(--line-2); border-radius: var(--r); }
     .done.show { display: block; }
-    .done h3 { color: var(--maroon); font-size: 1.6rem; }
+    .done h3 { margin-bottom: 10px; }
 
-    footer { background: #1f0c08; color: rgba(255, 255, 255, .75); padding: 44px 0 30px; text-align: center; font-size: .92rem; }
-    footer a { color: var(--gold-2); }
-    footer details { max-width: 860px; margin: 18px auto 0; text-align: left; background: rgba(255, 255, 255, .04); border-radius: 12px; padding: 10px 16px; }
-    footer summary { cursor: pointer; color: rgba(255, 255, 255, .85); }
-    footer details ul { font-size: .8rem; padding-left: 18px; color: rgba(255, 255, 255, .65); }
+    footer { background: var(--night); color: rgba(255, 255, 255, .6); padding: 64px 0 34px; font-size: .9rem; }
+    .ft { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+    .ft .brand { color: #fff; margin-bottom: 14px; }
+    .ft h4 { color: #fff; font-size: .85rem; font-weight: 600; margin: 0 0 12px; }
+    .ft ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .ft a { text-decoration: none; } .ft a:hover { color: #fff; }
+    .fb { display: flex; justify-content: space-between; gap: 20px; padding-top: 24px; flex-wrap: wrap; }
+    .fb a { color: var(--moon); }
+    footer details { margin-top: 18px; }
+    footer summary { cursor: pointer; color: rgba(255, 255, 255, .75); }
+    footer details ul { font-size: .78rem; padding-left: 18px; margin-top: 10px; display: grid; gap: 4px; }
+    footer details a { text-decoration: underline; }
 
-    /* Demo bar + floating enquiry */
-    .demo-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: #0a4fd6; color: #fff; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px 46px 10px 16px; font-size: .92rem; text-align: center; }
-    .demo-bar a { color: #ffd166; font-weight: 700; white-space: nowrap; }
-    .demo-bar button { position: absolute; right: 12px; background: none; border: 0; color: #fff; font-size: 1.3rem; cursor: pointer; }
-    .demo-bar .short { display: none; }
-    @media (max-width: 600px) { .demo-bar .long { display: none; } .demo-bar .short { display: inline; } }
-    .float-chat { position: fixed; right: 18px; bottom: 72px; z-index: 55; width: 56px; height: 56px; border-radius: 50%; background: #22c55e; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 26px rgba(0, 0, 0, .25); }
-    .float-chat svg { width: 28px; height: 28px; }
+    /* Demo bar + chat */
+    .demo { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; height: 44px; background: #0a4fd6; color: #fff; display: flex; align-items: center; justify-content: center; gap: 14px; font-size: .85rem; padding: 0 50px 0 16px; }
+    .demo a { color: #ffd166; font-weight: 600; white-space: nowrap; }
+    .demo button { position: absolute; right: 6px; width: 40px; height: 40px; background: none; border: 0; color: #fff; font-size: 1.3rem; cursor: pointer; }
+    .demo .s { display: none; }
+    .chat { position: fixed; right: 18px; bottom: 62px; z-index: 55; width: 54px; height: 54px; border-radius: 50%; background: #1f9d55; color: #fff; display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0, 0, 0, .22); transition: transform .2s; }
+    .chat:hover { transform: scale(1.06); }
+    .chat .ic { width: 26px; height: 26px; }
 
-    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    .rv { opacity: 0; transform: translateY(18px); transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1); }
+    .rv.in { opacity: 1; transform: none; }
 
-    @media (max-width: 1080px) { .g4 { grid-template-columns: repeat(2, 1fr); } .moons { grid-template-columns: repeat(2, 1fr); } .fac { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 900px) {
-      .g3 { grid-template-columns: 1fr; }
-      .split, .deepam-grid, .dorm { grid-template-columns: 1fr; gap: 30px; }
-      .dorm { gap: 0; }
-      .booking-bar { grid-template-columns: 1fr 1fr; }
-      .booking-bar .btn { grid-column: 1 / -1; }
-      .menu { position: fixed; inset: 72px 0 auto; background: var(--cream); flex-direction: column; padding: 20px; gap: 18px; display: none; box-shadow: 0 20px 40px rgba(0, 0, 0, .12); }
-      .menu.open { display: flex; }
-      .menu a { color: var(--ink); }
-      .burger { display: block; }
-      form.request { grid-template-columns: 1fr; padding: 22px; }
-      .section { padding: 70px 0; }
-      .facts { gap: 20px; }
-      .timeline li { grid-template-columns: 1fr; gap: 2px; }
+    @media (max-width: 1080px) {
+      .amen { grid-template-columns: repeat(2, 1fr); }
+      .switch { grid-template-columns: 1fr; }
+      .tabs { flex-direction: row; overflow-x: auto; border-top: 0; gap: 8px; scrollbar-width: none; margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad); }
+      .tabs::-webkit-scrollbar { display: none; }
+      .tab { flex: none; flex-direction: column; gap: 2px; border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
+      .tab::before { display: none; }
+      .tab[aria-selected="true"] { padding-left: 16px; border-color: var(--ink); background: var(--ink); color: #fff; }
+      .finder { grid-template-columns: repeat(2, 1fr); }
+      .finder label:nth-child(2) { border-right: 0; }
+      .finder label:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .finder .btn { grid-column: 1 / -1; height: 50px; }
+      .finder label:nth-child(4) { border-right: 0; }
     }
-    @media (max-width: 560px) {
-      .g4, .moons { grid-template-columns: 1fr; }
-      .fac { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .fac div { padding: 14px; }
-      .fac span { font-size: .84rem; }
-      .countdown { gap: 8px; flex-wrap: nowrap; }
-      .countdown div { min-width: 0; flex: 1 1 0; max-width: 84px; padding: 12px 4px; }
-      .countdown b { font-size: 1.7rem; }
-      .countdown span { font-size: .66rem; letter-spacing: .08em; }
-      .dorm .body { padding: 24px 20px; }
-      .dorm-price { flex-wrap: wrap; }
-      .dorm-price .btn { width: 100%; }
-      .hero .container { padding-top: 104px; }
-      .hero p.lead { font-size: 1.02rem; }
-      .moon-chip { font-size: .86rem; }
+    @media (max-width: 900px) {
+      .nav, .hdr .btn { display: none; }
+      .menu-btn { display: block; }
+      .hdr.open .nav { display: flex; position: fixed; inset: 72px 0 auto; flex-direction: column; gap: 0; background: var(--bg); padding: 8px var(--pad) 20px; box-shadow: 0 20px 40px rgba(0, 0, 0, .1); }
+      .hdr.open .nav a { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--ink); opacity: 1; }
+      .hdr.open { background: var(--bg); color: var(--ink); }
+      .row-head, .intro, .panel, .dp-grid, .giri, .loc, .faq-grid, .book-grid, .ft { grid-template-columns: 1fr; }
+      .row-head p { justify-self: start; }
+      .hero-low { grid-template-columns: 1fr; gap: 22px; }
+      .steps { grid-template-columns: 1fr 1fr; row-gap: 28px; }
+      .pack { grid-template-columns: 1fr; gap: 16px; }
+      .reviews { grid-template-columns: 1fr; gap: 28px; }
+      .food { grid-template-columns: 1fr 1fr 1fr; }
+      .food-head { flex-direction: column; align-items: start; gap: 10px; }
+      .dp-pic { aspect-ratio: 16 / 11; }
+      .giri-svg { max-width: 520px; margin: 0 auto; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .hero-in { padding-top: 112px; }
+      .hero-meta { gap: 24px; }
+      .hero-meta b { font-size: 1.25rem; }
+      .intro-img { grid-template-columns: 1fr; }
+      .intro-img img + img { display: none; }
+      .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; gap: 8px; }
+      .food { grid-template-columns: 1fr; }
+      .food img { aspect-ratio: 16 / 10; }
+      .amen div { padding: 20px 16px 22px; }
+      .amen span { font-size: .84rem; }
+      form.req { grid-template-columns: 1fr; }
+      .book-info div { grid-template-columns: 1fr; gap: 2px; }
+      .cd div { padding: 12px 14px; }
+      .cd b { font-size: 1.55rem; }
+      .mt thead { display: none; }
+      .mt, .mt tbody, .mt tr, .mt td { display: block; width: 100%; }
+      .mt tr { padding: 16px 0 16px 14px; border-bottom: 1px solid var(--line); position: relative; }
+      .mt td { padding: 0; border: 0; }
+      .mt tr.next { box-shadow: inset 3px 0 0 var(--accent); background: linear-gradient(90deg, var(--accent-soft), rgba(251, 238, 230, 0)); }
+      .mt tr.next td, .mt tr.next td:first-child { background: none; box-shadow: none; padding-left: 0; }
+      .mt td:first-child { font-size: .8rem; color: var(--accent); }
+      .mt .tg { margin-top: 6px; }
+      .demo .l { display: none; } .demo .s { display: inline; }
+      .hero::after { background: linear-gradient(180deg, rgba(12, 8, 6, .55) 0%, rgba(12, 8, 6, .42) 40%, rgba(12, 8, 6, .9) 100%); }
+      .hero-in { padding-bottom: 64px; }
+      .steps { grid-template-columns: 1fr; border-top: 0; border-left: 1px solid rgba(255, 255, 255, .16); margin-left: 4px; row-gap: 0; }
+      .steps div { padding: 0 0 26px 22px; }
+      .steps div::before { top: 7px; left: -5px; }
+      .giri-facts b { font-size: 1.3rem; }
+      .lg-t { font-size: 22px; } .hill-t { font-size: 22px; } .hill-s { font-size: 17px; }
+      .tag-t { font-size: 16px; } .tag-bg { width: 150px; height: 32px; y: -20px; } .pin-t { font-size: 20px; }
+      .lg-dot { r: 9px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .reveal { opacity: 1; transform: none; transition: none; }
+      .rv { opacity: 1; transform: none; transition: none; }
       .hero video { display: none; }
-      .flame span, .flame::after { animation: none; }
+      .route { stroke-dashoffset: 0; animation: none !important; }
+      .lg { opacity: 1; transition: none; }
+      .dp-pic::after { animation: none; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" id="header">
-    <div class="container nav">
-      <a href="#top" class="logo" aria-label="Jyothi Giri Residency home">
-        <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="19" fill="#d9a63a"/><path d="M5 31 L20 12 L35 31 Z" fill="#5a1414"/><path d="M20 4.5c2.6 3 3 5.4 0 8.5-3-3.1-2.6-5.5 0-8.5z" fill="#fff3c4"/><path d="M9 31h22" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity=".7"/></svg>
-        <span><b>Jyothi Giri</b><small>Residency · Tiruvannamalai</small></span>
+  <header class="hdr" id="hdr">
+    <div class="wrap">
+      <a href="#top" class="brand" aria-label="Raymelz Lodge, home">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="currentColor"/><path class="hm" d="M6 24 14 11l3 4 3.5-6L26 24z"/><circle cx="20.5" cy="6.6" r="2" fill="#f59e0b"/></svg>
+        <span>Raymelz Lodge<small>Tiruvannamalai</small></span>
       </a>
-      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      </button>
-      <ul class="menu" id="menu">
+      <ul class="nav" id="nav">
         <li><a href="#rooms">Rooms</a></li>
         <li><a href="#deepam">Deepam 2026</a></li>
         <li><a href="#girivalam">Girivalam</a></li>
-        <li><a href="#gallery">Gallery</a></li>
         <li><a href="#location">Location</a></li>
-        <li><a href="#book" class="btn btn-gold">Book Now</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
+      <a href="#book" class="btn btn-ink">Book a room</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </header>
 
@@ -301,400 +400,472 @@
     <section class="hero">
       <img class="poster" src="images/hero.webp" alt="" aria-hidden="true" width="1920" height="1080">
       <video autoplay muted loop playsinline preload="auto" poster="images/hero.webp" aria-hidden="true"><source src="video/hero.mp4" type="video/mp4"></video>
-      <div class="container">
-        <span class="eyebrow">Tiruvannamalai · 7 minutes' walk to the temple</span>
-        <p class="ta-line ta">அண்ணாமலையாரின் அருள் பெற வாருங்கள்</p>
-        <h1>Stay at the foot of Arunachala</h1>
-        <p class="lead">Clean AC and non-AC rooms, family rooms and group dormitories near the Arunachaleswarar Temple. Book direct with us for the best price.</p>
-        <a class="moon-chip" href="#girivalam" id="moonChip"><span class="moon" aria-hidden="true"></span><span id="moonText">Next Pournami Girivalam: <b>Mon 23 – Tue 24 Nov 2026</b></span></a>
-        <form class="booking-bar" id="quickBook">
-          <div><label for="qIn">Check-in</label><input type="date" id="qIn" required></div>
-          <div><label for="qOut">Check-out</label><input type="date" id="qOut" required></div>
-          <div><label for="qGuests">Guests</label>
-            <select id="qGuests"><option>1 guest</option><option selected>2 guests</option><option>3–4 (family)</option><option>5–9 (family / group)</option><option>10+ (group dormitory)</option></select></div>
-          <button class="btn btn-gold" type="submit">Check Availability</button>
+      <div class="hero-in wrap">
+        <a class="hero-moon" href="#girivalam" id="moonLink"><i aria-hidden="true"></i><span id="moonText">Next Pournami Girivalam · <b>Mon 23 – Tue 24 Nov</b></span></a>
+        <span class="ta">அண்ணாமலையாரின் அருள் பெற வாருங்கள்</span>
+        <h1>Stay at the foot of Arunachala.</h1>
+        <div class="hero-low">
+          <p>Clean rooms and group dormitories, seven minutes' walk from the Arunachaleswarar Temple. Hot water at any hour, safe parking, and a team that knows Girivalam.</p>
+          <div class="hero-meta"><div><b>600 m</b>to the temple</div><div><b>24 h</b>check-in</div><div><b>₹899</b>rooms from</div></div>
+        </div>
+        <form class="finder" id="finder" aria-label="Check availability">
+          <label><span>Check-in</span><input type="date" id="qIn" required></label>
+          <label><span>Check-out</span><input type="date" id="qOut" required></label>
+          <label><span>Guests</span><select id="qGuests"><option>1 guest</option><option selected>2 guests</option><option>3–4 guests</option><option>5–9 guests</option><option>10+ (group)</option></select></label>
+          <label><span>Room</span><select id="qRoom"><option>AC Double Room</option><option>Non-AC Double Room</option><option>Deluxe Hill-View Room</option><option>Family Room</option><option>Group Dormitory</option></select></label>
+          <button class="btn btn-ink" type="submit">Check availability <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </form>
       </div>
     </section>
 
-    <div class="strip"><ul><li>🛕 7 min walk to temple</li><li>🚗 Car &amp; bus parking</li><li>❄️ AC &amp; non-AC rooms</li><li>♨️ 24-hour hot water</li><li>🕘 24-hour check-in</li><li>🎒 Free luggage room</li></ul></div>
-
-    <section class="section">
-      <div class="container split">
-        <img src="images/town.webp" alt="Tiruvannamalai town and Arunachala hill seen from the slopes" width="1400" height="934" loading="lazy" class="reveal">
-        <div class="reveal">
-          <span class="eyebrow">Welcome</span>
-          <h2>A peaceful stay for pilgrims and families</h2>
-          <p>Jyothi Giri Residency is a family-run lodge a short walk from the Raja Gopuram of the Arunachaleswarar Temple. Pilgrims come to us for darshan, for Pournami Girivalam and for the Karthigai Deepam festival.</p>
-          <p>We keep it simple: clean rooms, hot water at any hour, safe parking, and a team that knows the town. Arriving late after Girivalam? Your room and a hot bath will be ready.</p>
-          <div class="facts"><div><b>32</b><span>Rooms &amp; dormitory beds</span></div><div><b>7 min</b><span>Walk to the temple</span></div><div><b>24/7</b><span>Check-in &amp; hot water</span></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="rooms">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">Rooms</span><h2>Rooms near Arunachaleswarar Temple</h2><p>Every room has an attached bathroom, 24-hour hot water, fresh linen and free Wi-Fi.</p></div>
-        <div class="grid g4">
-          <article class="card reveal">
-            <div class="ph"><img src="images/room-nonac.webp" alt="Non-AC Double Room" width="1280" height="720" loading="lazy"></div>
-            <div class="body"><h3>Non-AC Double Room</h3><p>Simple, clean room with a fan, geyser and two single or one double bed.</p>
-              <ul class="chips"><li>2 guests</li><li>Fan + geyser</li><li>Hot water</li></ul>
-              <div class="price"><b>₹899 <small>/ night</small></b><button class="btn btn-maroon" data-room="Non-AC Double Room">Request</button></div></div>
-          </article>
-          <article class="card reveal">
-            <div class="ph"><img src="images/room-ac.webp" alt="AC Double Room" width="1280" height="720" loading="lazy"></div>
-            <div class="body"><h3>AC Double Room</h3><p>Quiet air-conditioned room with TV and 24-hour hot water. Our most booked room.</p>
-              <ul class="chips"><li>2 guests</li><li>AC</li><li>TV</li></ul>
-              <div class="price"><b>₹1,399 <small>/ night</small></b><button class="btn btn-maroon" data-room="AC Double Room">Request</button></div></div>
-          </article>
-          <article class="card reveal">
-            <div class="ph"><img src="images/room-deluxe.webp" alt="Deluxe Hill-View Room" width="1280" height="720" loading="lazy"></div>
-            <div class="body"><h3>Deluxe Hill-View Room</h3><p>Bigger AC room on the top floor with a window facing the Arunachala hill.</p>
-              <ul class="chips"><li>2–3 guests</li><li>Hill view</li><li>AC</li></ul>
-              <div class="price"><b>₹1,899 <small>/ night</small></b><button class="btn btn-maroon" data-room="Deluxe Hill-View Room">Request</button></div></div>
-          </article>
-          <article class="card reveal">
-            <div class="ph"><img src="images/room-family.webp" alt="Family Room" width="1280" height="720" loading="lazy"></div>
-            <div class="body"><h3>Family Room</h3><p>Two beds plus an extra bed for families travelling together for darshan.</p>
-              <ul class="chips"><li>4–6 guests</li><li>2 beds + extra</li><li>AC</li></ul>
-              <div class="price"><b>₹2,499 <small>/ night</small></b><button class="btn btn-maroon" data-room="Family Room">Request</button></div></div>
-          </article>
-        </div>
-        <div class="dorm reveal">
-          <img src="images/dorm.webp" alt="Clean dormitory with bunk beds and lockers" width="1400" height="792" loading="lazy">
-          <div class="body">
-            <span class="tag">For Girivalam groups</span>
-            <h3>Group Dormitory</h3>
-            <p style="color:var(--muted);margin:0">Coming with your street, temple committee or bhajan group? Stay together in our dormitory halls.</p>
-            <ul><li>For groups of 10 to 40 people</li><li>Separate halls for men and women</li><li>Lockers, fans and clean common bathrooms</li><li>Tourist bus parking at the lodge</li></ul>
-            <div class="price dorm-price"><span class="amt"><span class="rs">₹</span>299 <small>/ bed / night</small></span><button class="btn btn-gold" data-room="Group Dormitory">Get Group Quote</button></div>
+    <section class="sec">
+      <div class="wrap">
+        <div class="intro">
+          <p class="lead rv">A family-run lodge near the Raja Gopuram, made for pilgrims who walk Girivalam at night and need <em>a hot bath at 3 AM</em>, a safe place for their bags, and a clean bed close to the temple.</p>
+          <div class="stats rv">
+            <div><b class="num">32</b><span>Rooms and dorm beds</span></div>
+            <div><b class="num">7 min</b><span>Walk to the temple</span></div>
+            <div><b class="num">24 h</b><span>Check-in and check-out</span></div>
+            <div><b class="num">40</b><span>Beds for Girivalam groups</span></div>
           </div>
         </div>
-        <p class="rate-note reveal"><b>Deepam and Pournami days:</b> rooms fill up weeks ahead and special rates apply. Send your request early to get a room.</p>
+        <div class="intro-img rv">
+          <img src="images/town.webp" alt="Tiruvannamalai town and Arunachala hill seen from the slopes" width="1400" height="934" loading="lazy">
+          <img src="images/gopuram.webp" alt="Gopuram tower of the Arunachaleswarar Temple" width="1400" height="1050" loading="lazy">
+        </div>
       </div>
     </section>
 
-    <section class="section deepam" id="deepam">
-      <img src="images/deepam-hill.webp" alt="" width="1400" height="1050" loading="lazy" class="bg" aria-hidden="true">
-      <div class="container">
-        <div class="head reveal">
-          <div class="flame" aria-hidden="true"><span></span></div>
-          <span class="eyebrow">Karthigai Deepam 2026</span>
-          <h2 id="deepamTitle">Maha Deepam on Tuesday, 24 November 2026</h2>
-          <p id="deepamLead">Lakhs of devotees come to see the sacred flame lit on top of Arunachala. Book your stay now, before the town fills up.</p>
+    <section class="sec rooms" id="rooms">
+      <div class="wrap">
+        <div class="row-head">
+          <div><span class="kicker">Rooms</span><h2 class="rv">Rooms near Arunachaleswarar Temple</h2></div>
+          <p class="rv">Every room has an attached bathroom, 24-hour hot water, fresh linen and free Wi-Fi. Prices are per night, except dormitory beds.</p>
         </div>
-        <div class="countdown reveal" id="countdown" aria-live="polite">
-          <div><b id="cdD">--</b><span>Days</span></div><div><b id="cdH">--</b><span>Hours</span></div><div><b id="cdM">--</b><span>Minutes</span></div><div><b id="cdS">--</b><span>Seconds</span></div>
-        </div>
-        <div class="deepam-grid">
-          <ul class="timeline reveal">
-            <li><b>Sun 15 Nov</b><span>Karthigai Brahmotsavam begins with the flag hoisting at the temple</span></li>
-            <li><b>15–24 Nov</b><span>Ten days of festival processions around the temple streets</span></li>
-            <li><b>Tue 24 Nov, early morning</b><span>Bharani Deepam is lit inside the temple</span></li>
-            <li><b>Tue 24 Nov, evening</b><span>Maha Deepam is lit on top of Arunachala, around sunset</span></li>
-          </ul>
-          <div class="deepam-pack reveal">
-            <h3>Deepam Stay Package</h3>
-            <div class="amt"><span class="rs">₹</span>5,999 <small>/ 2 guests · 2 nights</small></div>
-            <ul><li>AC Double Room, 23 to 25 November</li><li>Breakfast and filter coffee both days</li><li>Printed Girivalam route map</li><li>Free luggage room during Girivalam</li><li>Help with autos and parking passes</li></ul>
-            <button class="btn btn-gold" data-room="Deepam Stay Package (23–25 Nov)">Request Deepam Booking</button>
+        <div class="switch rv">
+          <div class="tabs" role="tablist" aria-label="Room types">
+            <button class="tab" role="tab" id="t0" aria-controls="p0" aria-selected="true" data-i="0"><b>AC Double Room</b><span>₹1,399 / night</span></button>
+            <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="false" data-i="1"><b>Non-AC Double Room</b><span>₹899 / night</span></button>
+            <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" data-i="2"><b>Deluxe Hill-View Room</b><span>₹1,899 / night</span></button>
+            <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" data-i="3"><b>Family Room</b><span>₹2,499 / night</span></button>
+            <button class="tab" role="tab" id="t4" aria-controls="p4" aria-selected="false" data-i="4"><b>Group Dormitory</b><span>₹299 / bed</span></button>
+          </div>
+          <div>
+            <div class="panel on" role="tabpanel" id="p0" aria-labelledby="t0">
+              <div class="pic"><img src="images/room-ac.webp" alt="AC Double Room" width="1280" height="720" loading="lazy"></div>
+              <div>
+                <h3>AC Double Room</h3>
+                <div class="meta"><span>2 guests</span><span>160 sq ft</span></div>
+                <p>Our most booked room. Quiet, air-conditioned and a short walk from the temple, with hot water at any hour.</p>
+                <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Air conditioning</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Attached bathroom with geyser</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>TV and free Wi-Fi</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Fresh linen and towels</li></ul>
+                <div class="price"><b class="num">₹1,399</b><span>/ night</span></div>
+                <button class="btn btn-ink" data-room="AC Double Room">Request this room <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p1" aria-labelledby="t1">
+              <div class="pic"><img src="images/room-nonac.webp" alt="Non-AC Double Room" width="1280" height="720" loading="lazy"></div>
+              <div>
+                <h3>Non-AC Double Room</h3>
+                <div class="meta"><span>2 guests</span><span>140 sq ft</span></div>
+                <p>A simple, spotless room for a darshan trip. Ceiling fan, geyser and two single beds or one double bed.</p>
+                <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Ceiling fan</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Attached bathroom with geyser</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Free Wi-Fi</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Twin or double bed</li></ul>
+                <div class="price"><b class="num">₹899</b><span>/ night</span></div>
+                <button class="btn btn-ink" data-room="Non-AC Double Room">Request this room <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p2" aria-labelledby="t2">
+              <div class="pic"><img src="images/room-deluxe.webp" alt="Deluxe Hill-View Room" width="1280" height="720" loading="lazy"></div>
+              <div>
+                <h3>Deluxe Hill-View Room</h3>
+                <div class="meta"><span>Up to 3 guests</span><span>210 sq ft</span></div>
+                <p>A larger room on the top floor with a window facing Arunachala. On Deepam night you can see the flame from bed.</p>
+                <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Window facing the hill</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Air conditioning</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Sofa and work desk</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Extra bed on request</li></ul>
+                <div class="price"><b class="num">₹1,899</b><span>/ night</span></div>
+                <button class="btn btn-ink" data-room="Deluxe Hill-View Room">Request this room <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p3" aria-labelledby="t3">
+              <div class="pic"><img src="images/room-family.webp" alt="Family Room" width="1280" height="720" loading="lazy"></div>
+              <div>
+                <h3>Family Room</h3>
+                <div class="meta"><span>4 to 6 guests</span><span>260 sq ft</span></div>
+                <p>Two beds and an extra bed, so parents, grandparents and kids can stay together in one room.</p>
+                <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Two double beds + extra bed</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Air conditioning</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Large bathroom</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Close to the lift</li></ul>
+                <div class="price"><b class="num">₹2,499</b><span>/ night</span></div>
+                <button class="btn btn-ink" data-room="Family Room">Request this room <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
+            <div class="panel" role="tabpanel" id="p4" aria-labelledby="t4">
+              <div class="pic"><img src="images/dorm.webp" alt="Group Dormitory" width="1400" height="792" loading="lazy"></div>
+              <div>
+                <h3>Group Dormitory</h3>
+                <div class="meta"><span>10 to 40 guests</span><span>2 halls</span></div>
+                <p>For Girivalam groups from your street, temple committee or bhajan group. Separate halls for men and women.</p>
+                <ul><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Bunk beds with lockers</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Common hot-water bathrooms</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Tourist bus parking</li><li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.2 4L19 7"/></svg>Group price on request</li></ul>
+                <div class="price"><b class="num">₹299</b><span>/ bed</span></div>
+                <button class="btn btn-ink" data-room="Group Dormitory">Request this room <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+              </div>
+            </div>
           </div>
         </div>
-        <p class="src-note">Festival timings are set by the temple. Please check the temple's announcement before you travel.</p>
+        <p class="rooms-note rv"><b>Deepam and Pournami dates:</b> rooms near the temple fill up weeks ahead and special rates apply. Send your request early.</p>
       </div>
     </section>
 
-    <section class="section" id="girivalam">
-      <div class="container">
-        <div class="split">
-          <div class="pic reveal"><img src="images/vayu.webp" alt="Arunachala hill seen from the Vayu Lingam temple on the Girivalam path" width="1400" height="932" loading="lazy"></div>
-          <div class="reveal">
-            <span class="eyebrow">Girivalam guide</span>
-            <h2>Walking around Arunachala</h2>
-            <p>Girivalam is the 14 km walk around the holy hill. Most devotees walk barefoot, clockwise, starting from the temple. The walk takes about 4 to 5 hours, and the biggest crowds come on Pournami (full moon) nights.</p>
-            <p style="margin-bottom:0">On the way you pass the eight Ashta Lingams:</p>
-            <ul class="lingams"><li>Indra</li><li>Agni</li><li>Yama</li><li>Niruthi</li><li>Varuna</li><li>Vayu</li><li>Kubera</li><li>Esanya</li></ul>
-            <ul class="tips">
-              <li>🎒 <span>Leave your bags and footwear in our free luggage room while you walk.</span></li>
-              <li>💧 <span>Carry water and start after the evening rush for a calmer walk.</span></li>
-              <li>♨️ <span>Come back to hot water and a fresh room, even at 3 AM.</span></li>
+    <section class="sec deepam" id="deepam">
+      <div class="wrap">
+        <div class="dp-grid">
+          <div>
+            <span class="kicker">Karthigai Deepam 2026</span>
+            <p class="dp-date rv" id="dpDate">24 Nov<small id="dpLead">Tuesday. The Maha Deepam is lit on top of Arunachala at sunset, and lakhs of devotees fill the town. Rooms go first.</small></p>
+            <div class="cd rv" id="cd" aria-live="polite"><div><b id="cdD">--</b><span>days</span></div><div><b id="cdH">--</b><span>hours</span></div><div><b id="cdM">--</b><span>minutes</span></div><div><b id="cdS">--</b><span>seconds</span></div></div>
+          </div>
+          <figure class="dp-pic rv"><img src="images/deepam-hill.webp" alt="The Maha Deepam lit on top of Arunachala hill at night" width="1400" height="1050" loading="lazy"><figcaption>The Maha Deepam on Arunachala</figcaption></figure>
+        </div>
+        <div class="steps rv">
+          <div><b>Sun 15 Nov</b><span>Brahmotsavam begins with the flag hoisting</span></div>
+          <div><b>15 to 24 Nov</b><span>Ten days of processions around the temple</span></div>
+          <div><b>Tue 24 Nov, dawn</b><span>Bharani Deepam is lit inside the temple</span></div>
+          <div><b>Tue 24 Nov, sunset</b><span>Maha Deepam is lit on top of the hill</span></div>
+        </div>
+        <div class="pack rv">
+          <div><h3>Deepam stay package</h3><p>AC Double Room for 23 to 25 November, breakfast both days, a printed Girivalam map and free luggage room.</p></div>
+          <div class="amt num">₹5,999 <span>2 guests · 2 nights</span></div>
+          <button class="btn btn-light" data-room="Deepam package (23–25 Nov)">Request package <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+        <p class="src">Festival timings are set by the temple. Please check the temple's announcement before you travel.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="girivalam">
+      <div class="wrap">
+        <div class="giri">
+          <div class="rv" id="giriBox"><svg class="giri-svg" viewBox="-90 -20 700 560" role="img" aria-label="Diagram of the 14 km Girivalam path around Arunachala with the eight Ashta Lingams, walked clockwise from the temple">
+      <circle cx="260" cy="260" r="190" class="route-bg"/>
+      <circle cx="260" cy="260" r="190" class="route" pathLength="100"/>
+      <path d="M-6 -5 L2 0 L-6 5" transform="translate(435.5 332.7) rotate(112.5)" class="arr"/><path d="M-6 -5 L2 0 L-6 5" transform="translate(187.3 435.5) rotate(202.5)" class="arr"/><path d="M-6 -5 L2 0 L-6 5" transform="translate(84.5 187.3) rotate(292.5)" class="arr"/><path d="M-6 -5 L2 0 L-6 5" transform="translate(332.7 84.5) rotate(382.5)" class="arr"/>
+      <path d="M150 330 L215 225 L238 250 L262 178 L300 238 L322 222 L372 330 Z" class="hill"/>
+      <path d="M262 178 L278 203 L268 199 L262 210 L255 198 L247 203 Z" class="snow"/>
+      <circle cx="262" cy="165" r="5" class="flame"/>
+      <text x="260" y="358" text-anchor="middle" class="hill-t">Arunachala</text>
+      <text x="260" y="378" text-anchor="middle" class="hill-s">14 km · about 4 to 5 hours</text>
+      <g class="lg" style="--d:0s"><circle cx="450.0" cy="260.0" r="7" class="lg-dot"/><text x="484.0" y="264.0" text-anchor="start" class="lg-t">Indra</text></g><g class="lg" style="--d:0.18s"><circle cx="394.4" cy="394.4" r="7" class="lg-dot"/><text x="418.4" y="422.4" text-anchor="start" class="lg-t">Agni</text></g><g class="lg" style="--d:0.36s"><circle cx="260.0" cy="450.0" r="7" class="lg-dot"/><text x="260.0" y="488.0" text-anchor="middle" class="lg-t">Yama</text></g><g class="lg" style="--d:0.54s"><circle cx="125.6" cy="394.4" r="7" class="lg-dot"/><text x="101.6" y="422.4" text-anchor="end" class="lg-t">Niruthi</text></g><g class="lg" style="--d:0.72s"><circle cx="70.0" cy="260.0" r="7" class="lg-dot"/><text x="36.0" y="264.0" text-anchor="end" class="lg-t">Varuna</text></g><g class="lg" style="--d:0.8999999999999999s"><circle cx="125.6" cy="125.6" r="7" class="lg-dot"/><text x="101.6" y="105.6" text-anchor="end" class="lg-t">Vayu</text></g><g class="lg" style="--d:1.08s"><circle cx="260.0" cy="70.0" r="7" class="lg-dot"/><text x="260.0" y="40.0" text-anchor="middle" class="lg-t">Kubera</text></g><g class="lg" style="--d:1.26s"><circle cx="394.4" cy="125.6" r="7" class="lg-dot"/><text x="418.4" y="105.6" text-anchor="start" class="lg-t">Esanya</text></g>
+      <g transform="translate(454 210)"><rect x="0" y="-15" width="118" height="28" rx="6" class="tag-bg"/><text x="12" y="4" class="tag-t">Temple · start</text></g>
+      <g transform="translate(436 300)"><path d="M0 0c0-6 5-10 10-10s10 4 10 10c0 7-10 15-10 15S0 7 0 0z" class="pin"/><circle cx="10" cy="0" r="3.4" fill="#fff"/><text x="28" y="5" class="pin-t">Raymelz Lodge</text></g>
+    </svg></div>
+          <div>
+            <span class="kicker">Girivalam guide</span>
+            <h2 class="rv">Walking around Arunachala</h2>
+            <p class="rv" style="margin-top:18px">Girivalam is the walk around the holy hill. Devotees walk barefoot and clockwise, keeping the hill on their right, and pass the eight Ashta Lingams on the way. The biggest crowds come on Pournami nights.</p>
+            <div class="giri-facts rv"><div><b>14 km</b><span>around the hill</span></div><div><b>4–5 h</b><span>on foot</span></div><div><b>8</b><span>Ashta Lingams</span></div></div>
+            <ul class="tips rv">
+              <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="7.5" width="13" height="12" rx="2"/><path d="M9 7.5V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5M9.5 11v5M14.5 11v5"/></svg><span>Leave your bags and footwear in our free luggage room while you walk.</span></li>
+              <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5s5.8 6.2 5.8 10.6a5.8 5.8 0 0 1-11.6 0C6.2 9.7 12 3.5 12 3.5z"/><path d="M9.6 14.6a2.5 2.5 0 0 0 2.4 2.3"/></svg><span>Carry water, and start after the evening rush for a calmer walk.</span></li>
+              <li><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><span>Come back to hot water and a fresh room, even at 3 AM.</span></li>
             </ul>
           </div>
         </div>
-        <div class="head reveal" style="margin:70px auto 0"><span class="eyebrow">Pournami dates</span><h2>Upcoming Pournami Girivalam dates</h2><p>Plan your trip around the full moon. Rooms near the temple are booked first on these dates.</p></div>
+
         <div class="moons" id="moons">
-          <div class="moon-card reveal" data-date="2026-11-24" data-utc="2026-11-24T14:53:50.090Z" data-start="2026-11-23T16:53:50.090Z"><span class="nextb">Next</span><div class="m">Karthigai Pournami</div><div class="d">Mon 23 – Tue 24 Nov 2026</div><div class="t">Full moon: Tue 24 Nov, 8:23 PM IST</div><span class="special">Karthigai Deepam</span></div>
-          <div class="moon-card reveal" data-date="2026-12-24" data-utc="2026-12-24T01:28:38.813Z" data-start="2026-12-23T03:28:38.813Z"><span class="nextb">Next</span><div class="m">Margazhi Pournami</div><div class="d">Wed 23 – Thu 24 Dec 2026</div><div class="t">Full moon: Thu 24 Dec, 6:58 AM IST</div></div>
-          <div class="moon-card reveal" data-date="2027-01-22" data-utc="2027-01-22T12:17:47.712Z" data-start="2027-01-21T14:17:47.712Z"><span class="nextb">Next</span><div class="m">Thai Pournami</div><div class="d">Thu 21 – Fri 22 Jan 2027</div><div class="t">Full moon: Fri 22 Jan, 5:47 PM IST</div></div>
-          <div class="moon-card reveal" data-date="2027-02-21" data-utc="2027-02-20T23:23:58.501Z" data-start="2027-02-20T01:23:58.501Z"><span class="nextb">Next</span><div class="m">Maasi Pournami</div><div class="d">Sat 20 – Sun 21 Feb 2027</div><div class="t">Full moon: Sun 21 Feb, 4:53 AM IST</div></div>
-          <div class="moon-card reveal" data-date="2027-03-22" data-utc="2027-03-22T10:44:07.646Z" data-start="2027-03-21T12:44:07.646Z"><span class="nextb">Next</span><div class="m">Panguni Pournami</div><div class="d">Sun 21 – Mon 22 Mar 2027</div><div class="t">Full moon: Mon 22 Mar, 4:14 PM IST</div></div>
-          <div class="moon-card reveal" data-date="2027-04-21" data-utc="2027-04-20T22:27:30.656Z" data-start="2027-04-20T00:27:30.656Z"><span class="nextb">Next</span><div class="m">Chithirai Pournami</div><div class="d">Tue 20 – Wed 21 Apr 2027</div><div class="t">Full moon: Wed 21 Apr, 3:57 AM IST</div><span class="special">Chitra Pournami</span></div>
-          <div class="moon-card reveal" data-date="2027-05-20" data-utc="2027-05-20T10:59:26.446Z" data-start="2027-05-19T12:59:26.446Z"><span class="nextb">Next</span><div class="m">Vaikasi Pournami</div><div class="d">Wed 19 – Thu 20 May 2027</div><div class="t">Full moon: Thu 20 May, 4:29 PM IST</div></div>
-          <div class="moon-card reveal" data-date="2027-06-19" data-utc="2027-06-19T00:44:55.880Z" data-start="2027-06-18T02:44:55.880Z"><span class="nextb">Next</span><div class="m">Aani Pournami</div><div class="d">Fri 18 – Sat 19 Jun 2027</div><div class="t">Full moon: Sat 19 Jun, 6:14 AM IST</div></div>
+          <div class="row-head">
+            <div><span class="kicker">Pournami dates</span><h2 class="rv">Upcoming Girivalam dates</h2></div>
+            <p class="rv">Plan your trip around the full moon. Rooms near the temple are booked first on these dates.</p>
+          </div>
+          <table class="mt rv">
+            <thead><tr><th>Tamil month</th><th>Girivalam</th><th>Full moon (IST)</th><th></th></tr></thead>
+            <tbody>
+              <tr data-utc="2026-11-24T14:53:50.090Z" data-start="2026-11-23T16:53:50.090Z"><td>Karthigai Pournami<span class="nx">Next</span></td><td class="when">Mon 23 – Tue 24 Nov 2026</td><td class="peak">Tue 24 Nov, 8:23 PM</td><td><span class="tg">Karthigai Deepam</span></td></tr>
+              <tr data-utc="2026-12-24T01:28:38.813Z" data-start="2026-12-23T03:28:38.813Z"><td>Margazhi Pournami<span class="nx">Next</span></td><td class="when">Wed 23 – Thu 24 Dec 2026</td><td class="peak">Thu 24 Dec, 6:58 AM</td><td></td></tr>
+              <tr data-utc="2027-01-22T12:17:47.712Z" data-start="2027-01-21T14:17:47.712Z"><td>Thai Pournami<span class="nx">Next</span></td><td class="when">Thu 21 – Fri 22 Jan 2027</td><td class="peak">Fri 22 Jan, 5:47 PM</td><td></td></tr>
+              <tr data-utc="2027-02-20T23:23:58.501Z" data-start="2027-02-20T01:23:58.501Z"><td>Maasi Pournami<span class="nx">Next</span></td><td class="when">Sat 20 – Sun 21 Feb 2027</td><td class="peak">Sun 21 Feb, 4:53 AM</td><td></td></tr>
+              <tr data-utc="2027-03-22T10:44:07.646Z" data-start="2027-03-21T12:44:07.646Z"><td>Panguni Pournami<span class="nx">Next</span></td><td class="when">Sun 21 – Mon 22 Mar 2027</td><td class="peak">Mon 22 Mar, 4:14 PM</td><td></td></tr>
+              <tr data-utc="2027-04-20T22:27:30.656Z" data-start="2027-04-20T00:27:30.656Z"><td>Chithirai Pournami<span class="nx">Next</span></td><td class="when">Tue 20 – Wed 21 Apr 2027</td><td class="peak">Wed 21 Apr, 3:57 AM</td><td><span class="tg">Chitra Pournami</span></td></tr>
+              <tr data-utc="2027-05-20T10:59:26.446Z" data-start="2027-05-19T12:59:26.446Z"><td>Vaikasi Pournami<span class="nx">Next</span></td><td class="when">Wed 19 – Thu 20 May 2027</td><td class="peak">Thu 20 May, 4:29 PM</td><td></td></tr>
+              <tr data-utc="2027-06-19T00:44:55.880Z" data-start="2027-06-18T02:44:55.880Z"><td>Aani Pournami<span class="nx">Next</span></td><td class="when">Fri 18 – Sat 19 Jun 2027</td><td class="peak">Sat 19 Jun, 6:14 AM</td><td></td></tr>
+            </tbody>
+          </table>
+          <p class="mt-note">Dates are worked out from the full moon for India (IST). The temple announces the exact Pournami start and end times before each Girivalam.</p>
         </div>
-        <p class="moons-note">Dates are for India (IST), calculated from the full moon. The exact Pournami start and end times are announced by the temple before each Girivalam.</p>
       </div>
     </section>
 
-    <section class="section alt">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">Facilities</span><h2>Everything a pilgrim needs</h2><p>Small comforts that make a temple trip easy for elders, kids and big groups.</p></div>
-        <div class="fac reveal">
-          <div><span class="ic">🚗</span><b>Car &amp; bus parking</b><span>Safe parking for cars, vans and tourist buses.</span></div>
-          <div><span class="ic">🕘</span><b>24-hour check-in</b><span>Arrive at any time, day or night.</span></div>
-          <div><span class="ic">♨️</span><b>Hot water 24/7</b><span>Solar and electric geysers in every room.</span></div>
-          <div><span class="ic">🎒</span><b>Free luggage room</b><span>Keep your bags safe during Girivalam.</span></div>
-          <div><span class="ic">⚡</span><b>Power backup</b><span>Generator backup for lights and fans.</span></div>
-          <div><span class="ic">🛺</span><b>Auto &amp; taxi help</b><span>We call trusted autos to the temple and ashrams.</span></div>
-          <div><span class="ic">⬆️</span><b>Lift</b><span>Easy for elders and families with luggage.</span></div>
-          <div><span class="ic">🗣️</span><b>Tamil, English, Telugu</b><span>Our team helps guests from every state and abroad.</span></div>
+    <section class="sec rooms" id="stay">
+      <div class="wrap">
+        <div class="row-head">
+          <div><span class="kicker">At the lodge</span><h2 class="rv">Small things that make a temple trip easy</h2></div>
+          <p class="rv">For elders, families with kids and big groups arriving by bus at midnight.</p>
+        </div>
+        <div class="amen rv">
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16.5V13l1.8-4.6A2 2 0 0 1 7.7 7h8.6a2 2 0 0 1 1.9 1.4L20 13v3.5"/><path d="M3 16.5h18v2H3z"/><circle cx="7.5" cy="13.5" r=".9"/><circle cx="16.5" cy="13.5" r=".9"/></svg><b>Car and bus parking</b><span>Safe parking for cars, vans and tourist buses.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><b>24-hour check-in</b><span>Arrive at any hour. Check-out is 24 hours later.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5s5.8 6.2 5.8 10.6a5.8 5.8 0 0 1-11.6 0C6.2 9.7 12 3.5 12 3.5z"/><path d="M9.6 14.6a2.5 2.5 0 0 0 2.4 2.3"/></svg><b>Hot water, day and night</b><span>Geysers in every bathroom, ready at 3 AM.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5.5" y="7.5" width="13" height="12" rx="2"/><path d="M9 7.5V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2.5M9.5 11v5M14.5 11v5"/></svg><b>Free luggage room</b><span>Leave your bags and footwear during Girivalam.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3 5.5 13.5H11L10 21l7.5-10.5H12z"/></svg><b>Power backup</b><span>Generator backup for lights and fans.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16V10a3 3 0 0 1 3-3h7.5l4.5 5v4"/><path d="M4 12h15"/><circle cx="7.5" cy="16.5" r="1.8"/><circle cx="16.5" cy="16.5" r="1.8"/><path d="M9.3 16.5h5.4"/></svg><b>Autos and taxis</b><span>We call trusted autos to the temple and ashrams.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="m9 9.5 3-3 3 3M9 14.5l3 3 3-3"/></svg><b>Lift to every floor</b><span>Easy for elders and families with luggage.</span></div>
+          <div><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10H10l-4.5 3.5v-3.5H4z"/><path d="M8 9.5h8M8 12.5h5"/></svg><b>Tamil, English, Telugu</b><span>Our team helps guests from every state and abroad.</span></div>
+        </div>
+        <div class="food-head">
+          <h3 class="rv">Hot breakfast next door, from 5:30 AM</h3>
+          <p class="rv">Our partner pure-veg restaurant opens early, just in time for walkers coming back from Girivalam.</p>
         </div>
         <div class="food">
-          <div class="head reveal" style="margin-bottom:30px"><span class="eyebrow">After Girivalam</span><h2>Hot breakfast, right next door</h2><p>Our partner pure-veg restaurant opens at 5:30 AM, just in time for the walkers coming back.</p></div>
-          <div class="grid g3">
-            <article class="card reveal"><div class="ph"><img src="images/idli.webp" alt="Idli, vada, sambar and chutney on a plate" width="1400" height="1050" loading="lazy"></div><div class="body"><h3>Idli, vada &amp; sambar</h3><p>Soft idlis and crispy vadas from early morning.</p></div></article>
-            <article class="card reveal"><div class="ph"><img src="images/dosa.webp" alt="Crispy dosa served with chutney and sambar" width="1400" height="1552" loading="lazy"></div><div class="body"><h3>Crispy dosa</h3><p>Plain, masala and onion dosa, made fresh.</p></div></article>
-            <article class="card reveal"><div class="ph"><img src="images/coffee.webp" alt="South Indian filter coffee in a steel tumbler and dabara" width="1400" height="1054" loading="lazy"></div><div class="body"><h3>Filter coffee</h3><p>Strong, hot filter coffee to start your day.</p></div></article>
+          <figure class="rv"><img src="images/idli.webp" alt="Idli, vada, sambar and chutney on a plate" width="1400" height="1050" loading="lazy"><figcaption><b>Idli and vada</b>with sambar and chutney</figcaption></figure>
+          <figure class="rv"><img src="images/dosa.webp" alt="Crispy dosa with chutney and sambar" width="1400" height="1552" loading="lazy"><figcaption><b>Dosa</b>plain, masala or onion</figcaption></figure>
+          <figure class="rv"><img src="images/coffee.webp" alt="South Indian filter coffee in a steel tumbler" width="1400" height="1054" loading="lazy"><figcaption><b>Filter coffee</b>strong, hot, fresh</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="gallery">
+      <div class="wrap">
+        <div class="row-head">
+          <div><span class="kicker">Gallery</span><h2 class="rv">Tiruvannamalai, up close</h2></div>
+          <p class="rv">The hill, the temple and the lamps of Karthigai, a few minutes from your room.</p>
+        </div>
+        <div class="bento rv" id="bento">
+          <button class="w2 h2"><img src="images/lake.webp" alt="Arunachala reflected in a lake in Tiruvannamalai" width="1400" height="1050" loading="lazy"></button>
+          <button class="h2"><img src="images/gopuram.webp" alt="Gopuram tower of the Arunachaleswarar Temple" width="1400" height="1050" loading="lazy"></button>
+          <button class=""><img src="images/lamps.webp" alt="Karthigai lamps around a kolam" width="1400" height="1050" loading="lazy"></button>
+          <button class="w2"><img src="images/g-room-breakfast.webp" alt="Bright room with breakfast on a small table" width="1280" height="720" loading="lazy"></button>
+          <button class=""><img src="images/cloudcap.webp" alt="A cloud resting on the top of Arunachala" width="1400" height="1050" loading="lazy"></button>
+          <button class=""><img src="images/temple-tank.webp" alt="Temple tank with the hill behind" width="1400" height="934" loading="lazy"></button>
+          <button class=""><img src="images/kolam.webp" alt="Kolam with agal lamps for Karthigai Deepam" width="1000" height="980" loading="lazy"></button>
+          <button class="w2"><img src="images/town-hill.webp" alt="Tiruvannamalai town seen from the hill" width="1200" height="900" loading="lazy"></button>
+          <button class=""><img src="images/agal.webp" alt="A lit clay agal lamp" width="1400" height="902" loading="lazy"></button>
+          <button class=""><img src="images/g-corridor.webp" alt="Carpeted corridor with room doors" width="1280" height="720" loading="lazy"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec rooms">
+      <div class="wrap">
+        <div class="reviews">
+          <figure class="rv"><blockquote>“We stayed for Deepam with my parents. The temple was a short walk away and the room was very clean.”</blockquote><figcaption><b>Meena</b> · Chennai</figcaption></figure>
+          <figure class="rv"><blockquote>“Our group of 22 stayed in the dormitory for Pournami. They kept our bags safe and had hot water ready at 3 AM.”</blockquote><figcaption><b>Ravi</b> · Bengaluru</figcaption></figure>
+          <figure class="rv"><blockquote>“Quiet room with a view of the hill. The staff booked autos for us to Ramana Ashram every morning.”</blockquote><figcaption><b>Anna</b> · Germany</figcaption></figure>
+        </div>
+        <p class="sample">Sample reviews for this demo website.</p>
+      </div>
+    </section>
+
+    <section class="sec" id="location">
+      <div class="wrap loc">
+        <div>
+          <span class="kicker">Location</span>
+          <h2 class="rv">In the temple town</h2>
+          <p class="rv" style="margin-top:18px;color:var(--muted)">A short walk from the Raja Gopuram, the main east entrance of the Arunachaleswarar Temple.</p>
+          <dl class="dl rv">
+            <div><dt>Arunachaleswarar Temple</dt><i></i><dd>7 min walk</dd></div>
+            <div><dt>Central bus stand</dt><i></i><dd>about 1.5 km</dd></div>
+            <div><dt>Railway station</dt><i></i><dd>about 2 km</dd></div>
+            <div><dt>Puducherry</dt><i></i><dd>about 105 km</dd></div>
+            <div><dt>Chennai</dt><i></i><dd>about 190 km</dd></div>
+            <div><dt>Bengaluru</dt><i></i><dd>about 210 km</dd></div>
+          </dl>
+        </div>
+        <div class="map rv"><iframe src="https://maps.google.com/maps?q=Arunachaleswarar%20Temple%20Tiruvannamalai&amp;z=15&amp;output=embed" loading="lazy" title="Map of Arunachaleswarar Temple, Tiruvannamalai" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </div>
+    </section>
+
+    <section class="sec rooms" id="faq">
+      <div class="wrap faq-grid">
+        <div>
+          <span class="kicker">FAQ</span>
+          <h2 class="rv">Good to know</h2>
+          <p class="rv">Still have a question? Send it with your booking request and we'll reply on WhatsApp.</p>
+        </div>
+        <div class="qa rv">
+          <details open><summary>How far is the lodge from the temple?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>About 7 minutes on foot to the Raja Gopuram, the main east entrance of the Arunachaleswarar Temple.</p></details>
+          <details><summary>Do you have rooms on Deepam and Pournami days?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes, but they fill up early. Send your request as soon as you know your dates. A minimum 2-night stay applies on Deepam day.</p></details>
+          <details><summary>Can a big group stay together for Girivalam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Our dormitory halls take groups of 10 to 40, with separate halls for men and women and parking for your bus.</p></details>
+          <details><summary>Can we check in late or leave our bags during Girivalam?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Check-in is open 24 hours and check-out is 24 hours after you arrive. The luggage room is free for guests.</p></details>
+          <details><summary>Is there parking for cars and tourist buses?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Cars and vans park at the lodge, and there is space for tourist buses nearby.</p></details>
+          <details><summary>Do you help foreign guests going to Ramana Ashram?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary><p>Yes. Our reception speaks English and books autos to Sri Ramana Ashram and the other ashrams on the Girivalam road.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec book" id="book">
+      <div class="wrap book-grid">
+        <div>
+          <span class="kicker">Book direct</span>
+          <h2 class="rv">Send a booking request</h2>
+          <p class="rv" style="margin-top:18px;color:var(--muted)">Book directly with the lodge for the best price. We confirm every request on WhatsApp within a few hours.</p>
+          <div class="book-info rv">
+            <div><b>Check-in</b><span>Any time, 24 hours</span></div>
+            <div><b>Check-out</b><span>24 hours after check-in</span></div>
+            <div><b>Payment</b><span>UPI, cards or cash at the lodge</span></div>
+            <div><b>Groups</b><span>10 to 40 guests in the dormitory</span></div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="gallery">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">Gallery</span><h2>Tiruvannamalai &amp; our lodge</h2></div>
-        <div class="gallery reveal" id="gallery-grid">
-          <button><img src="images/lake.webp" alt="Arunachala hill reflected in a lake in Tiruvannamalai" width="1400" height="1050" loading="lazy"></button>
-          <button><img src="images/gopuram.webp" alt="White gopuram tower of the Arunachaleswarar Temple" width="1400" height="1050" loading="lazy"></button>
-          <button><img src="images/g-room-breakfast.webp" alt="Bright room with breakfast served on a small table" width="1280" height="720" loading="lazy"></button>
-          <button><img src="images/lamps.webp" alt="Karthigai lamps arranged around a colourful kolam" width="1400" height="1050" loading="lazy"></button>
-          <button><img src="images/cloudcap.webp" alt="A cloud sitting on the top of Arunachala hill in the morning" width="1400" height="1050" loading="lazy"></button>
-          <button><img src="images/temple-tank.webp" alt="Temple tank inside the Arunachaleswarar Temple with the hill behind" width="1400" height="934" loading="lazy"></button>
-          <button><img src="images/g-corridor.webp" alt="Long carpeted corridor with room doors on both sides" width="1280" height="720" loading="lazy"></button>
-          <button><img src="images/kolam.webp" alt="Kolam with agal oil lamps for Karthigai Deepam" width="1000" height="980" loading="lazy"></button>
-          <button><img src="images/town-hill.webp" alt="View of Tiruvannamalai town from Arunachala hill" width="1200" height="900" loading="lazy"></button>
-          <button><img src="images/g-room-night.webp" alt="Room with soft bedside lamps in the evening" width="1280" height="720" loading="lazy"></button>
-          <button><img src="images/agal.webp" alt="A lit clay agal lamp" width="1400" height="902" loading="lazy"></button>
-          <button><img src="images/cloudy.webp" alt="Arunachala hill on a cloudy day behind palm trees" width="1400" height="788" loading="lazy"></button>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">Guests</span><h2>What our guests say</h2></div>
-        <div class="grid g3">
-          <div class="review reveal"><div class="stars">★★★★★</div><p>“We stayed for Deepam with my parents. The temple was a short walk away and the room was very clean.”</p><b>Meena, Chennai</b></div>
-          <div class="review reveal"><div class="stars">★★★★★</div><p>“Our group of 22 stayed in the dormitory for Pournami. They kept our bags safe and had hot water ready at 3 AM.”</p><b>Ravi, Bengaluru</b></div>
-          <div class="review reveal"><div class="stars">★★★★★</div><p>“Quiet room with a view of the hill. The staff booked autos for us to Ramana Ashram every morning.”</p><b>Anna, Germany</b></div>
-        </div>
-        <p class="note">Sample reviews for this demo website.</p>
-      </div>
-    </section>
-
-    <section class="section" id="location">
-      <div class="container split">
-        <div class="reveal">
-          <span class="eyebrow">Location</span>
-          <h2>How to reach Tiruvannamalai</h2>
-          <p>We are in the temple town, a short walk from the Raja Gopuram (east tower) of the Arunachaleswarar Temple.</p>
-          <ul class="routes">
-            <li>🛕 <span><b>Arunachaleswarar Temple:</b> 7 minutes on foot</span></li>
-            <li>🚌 <span><b>Central bus stand:</b> about 1.5 km</span></li>
-            <li>🚆 <span><b>Tiruvannamalai railway station:</b> about 2 km</span></li>
-            <li>🛣️ <span><b>From Chennai:</b> about 190 km, around 4 hours by road</span></li>
-            <li>🛣️ <span><b>From Bengaluru:</b> about 210 km, around 4.5 hours by road</span></li>
-            <li>🛣️ <span><b>From Puducherry:</b> about 105 km, around 2.5 hours</span></li>
-          </ul>
-        </div>
-        <div class="map reveal"><iframe src="https://maps.google.com/maps?q=Arunachaleswarar%20Temple%20Tiruvannamalai&amp;z=15&amp;output=embed" loading="lazy" title="Map of Arunachaleswarar Temple, Tiruvannamalai" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">FAQ</span><h2>Good to know</h2></div>
-        <div class="faq reveal">
-          <details open><summary>How far is the lodge from Arunachaleswarar Temple?</summary><p>About 7 minutes on foot to the Raja Gopuram, the main east entrance of the temple.</p></details>
-          <details><summary>Do you have rooms on Karthigai Deepam and Pournami days?</summary><p>Yes, but they fill up early. Send your booking request as soon as you know your dates. A minimum 2-night stay applies on Deepam day.</p></details>
-          <details><summary>Can a big group stay together for Girivalam?</summary><p>Yes. Our dormitory halls take groups of 10 to 40 people, with separate halls for men and women and parking for your bus.</p></details>
-          <details><summary>Can we check in late at night or leave our bags during Girivalam?</summary><p>Check-in is open 24 hours. Our luggage room is free for guests, so you can walk Girivalam and come back to a hot bath.</p></details>
-          <details><summary>Is there parking for cars and tourist buses?</summary><p>Yes. We have parking for cars and vans at the lodge and space for tourist buses nearby.</p></details>
-          <details><summary>Do you help foreign guests visiting Ramana Ashram?</summary><p>Yes. Our reception speaks English and can book autos to Sri Ramana Ashram and other ashrams on the Girivalam road.</p></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="section book" id="book">
-      <div class="container">
-        <div class="head reveal"><span class="eyebrow">Book Direct</span><h2>Request your room</h2><p>Book directly with us for the best price. We'll confirm on WhatsApp within a few hours.</p></div>
-        <form class="request" id="requestForm">
-          <div><label for="fName">Your name</label><input id="fName" required autocomplete="name"></div>
-          <div><label for="fPhone">Phone / WhatsApp</label><input id="fPhone" type="tel" required autocomplete="tel" placeholder="+91"></div>
-          <div><label for="fIn">Check-in</label><input id="fIn" type="date" required></div>
-          <div><label for="fOut">Check-out</label><input id="fOut" type="date" required></div>
-          <div><label for="fRoom">Room or package</label>
-            <select id="fRoom"><option>Non-AC Double Room</option><option>AC Double Room</option><option>Deluxe Hill-View Room</option><option>Family Room</option><option>Group Dormitory</option><option>Deepam Stay Package (23–25 Nov)</option></select></div>
-          <div><label for="fGuests">Guests</label><select id="fGuests"><option>1 guest</option><option selected>2 guests</option><option>3–4 (family)</option><option>5–9 (family / group)</option><option>10+ (group dormitory)</option></select></div>
-          <div class="full"><label for="fMsg">Anything we should know? (optional)</label><textarea id="fMsg" rows="3" placeholder="Arrival time, Girivalam night, elders in the group…"></textarea></div>
-          <div class="full"><button class="btn btn-gold" type="submit">Send Booking Request</button></div>
-        </form>
-        <div class="done" id="done" role="status">
-          <h3>Thank you! 🙏</h3>
-          <p id="doneText"></p>
-          <p style="color:var(--muted);font-size:.9rem">This is a demo: on a real lodge website, this request reaches the owner instantly on WhatsApp and email.</p>
-          <a class="btn btn-maroon" id="waLink" href="#" target="_blank" rel="noopener">Also send on WhatsApp</a>
+        <div>
+          <form class="req" id="req">
+            <label>Your name<input id="fName" required autocomplete="name"></label>
+            <label>Phone or WhatsApp<input id="fPhone" type="tel" required autocomplete="tel" placeholder="+91"></label>
+            <label>Check-in<input id="fIn" type="date" required></label>
+            <label>Check-out<input id="fOut" type="date" required></label>
+            <label>Room or package<select id="fRoom"><option>AC Double Room</option><option>Non-AC Double Room</option><option>Deluxe Hill-View Room</option><option>Family Room</option><option>Group Dormitory</option><option>Deepam package (23–25 Nov)</option></select></label>
+            <label>Guests<select id="fGuests"><option>1 guest</option><option selected>2 guests</option><option>3–4 guests</option><option>5–9 guests</option><option>10+ (group)</option></select></label>
+            <label class="full">Anything we should know? (optional)<textarea id="fMsg" rows="3" placeholder="Arrival time, Girivalam night, elders in the group"></textarea></label>
+            <div class="full"><button class="btn btn-ink" type="submit">Send booking request <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+            <p class="fine full">This is a demo. On a real lodge website, the request reaches the owner on WhatsApp and email instantly.</p>
+          </form>
+          <div class="done" id="done" role="status">
+            <h3>Request sent. Thank you.</h3>
+            <p id="doneText" style="color:var(--muted)"></p>
+            <a class="btn btn-ink" id="waLink" href="#" target="_blank" rel="noopener">Also send on WhatsApp <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <p><b style="color:#fff">Jyothi Giri Residency</b> · Tiruvannamalai, Tamil Nadu (demo)</p>
-      <p>© 2026 Jyothi Giri Residency · Demo website designed by <a href="https://raymelz.com/resort-hotel-website-design/?utm_source=demo&utm_medium=lodge-demo&utm_campaign=tiruvannamalai" target="_blank" rel="noopener">Raymelz</a></p>
+    <div class="wrap">
+      <div class="ft">
+        <div>
+          <a href="#top" class="brand"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#fff"/><path d="M6 24 14 11l3 4 3.5-6L26 24z" fill="#0e0b09"/><circle cx="20.5" cy="6.6" r="2" fill="#f59e0b"/></svg><span>Raymelz Lodge<small>Tiruvannamalai</small></span></a>
+          <p style="max-width:340px">A demo lodge website for Tiruvannamalai, made to show lodge owners how a website can bring direct bookings.</p>
+        </div>
+        <div><h4>Stay</h4><ul><li><a href="#rooms">Rooms</a></li><li><a href="#deepam">Deepam 2026</a></li><li><a href="#girivalam">Girivalam dates</a></li><li><a href="#book">Book a room</a></li></ul></div>
+        <div><h4>Visit</h4><ul><li><a href="#location">Location</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      </div>
+      <div class="fb">
+        <span>© 2026 Raymelz Lodge (demo)</span>
+        <span>Website by <a href="https://raymelz.com/resort-hotel-website-design/?utm_source=demo&utm_medium=lodge-demo&utm_campaign=tiruvannamalai" target="_blank" rel="noopener">Raymelz</a></span>
+      </div>
       <details>
         <summary>Photo and video credits</summary>
         <ul>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Aurunachala2013.jpg" target="_blank" rel="noopener">Aurunachala2013.jpg</a> by Lebd, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> (cropped and animated for the hero video)</li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Tiruvannamalai_Hills.jpg" target="_blank" rel="noopener">Tiruvannamalai Hills.jpg</a> by Balu 606902, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> (cropped and animated for the hero video)</li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Lenticular_cloud_4.jpg" target="_blank" rel="noopener">Lenticular cloud 4.jpg</a> by L. Shyamal, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> (cropped and animated for the hero video)</li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Tiruvannamalai,_Arunachala_Hill,_Annamalai_Hill,_Slopes,_India.jpg" target="_blank" rel="noopener">Tiruvannamalai, Arunachala Hill, Annamalai Hill, Slopes, India.jpg</a> by Vyacheslav Argenberg, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Arunachalam_Temple_Gopuram.jpg" target="_blank" rel="noopener">Arunachalam Temple Gopuram.jpg</a> by Shiva16pixels, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Annamalaiyar_Temple_(14).jpg" target="_blank" rel="noopener">Annamalaiyar Temple (14).jpg</a> by Ssriram mt, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:View_of_Arunachala_hill_from_Vayu_Lingam_temple_area.jpg" target="_blank" rel="noopener">View of Arunachala hill from Vayu Lingam temple area.jpg</a> by Adityamadhav83, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Karthikai_Deepam_lit_on_the_sacred_hill.jpg" target="_blank" rel="noopener">Karthikai Deepam lit on the sacred hill.jpg</a> by Prajnaana, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Karthikai_theebanggal.jpg" target="_blank" rel="noopener">Karthikai theebanggal.jpg</a> by Eesha, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:%E0%AE%85%E0%AE%95%E0%AE%B2%E0%AF%8D_%E0%AE%B5%E0%AE%BF%E0%AE%B3%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81.JPG" target="_blank" rel="noopener">அகல் விளக்கு.JPG</a> by Thamiziniyan, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Special_Kolam_with_Agal_vilakku_(Oil_Lamp)_for_Kaarthigai_Deepam.jpg" target="_blank" rel="noopener">Special Kolam with Agal vilakku (Oil Lamp) for Kaarthigai Deepam.jpg</a> by ItsShanMani, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Hostel_6-bed_dorm_room,_Kuching,_Malaysia.jpg" target="_blank" rel="noopener">Hostel 6-bed dorm room, Kuching, Malaysia.jpg</a> by Sgroey, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:South_Indian_Breakast_Idli_Vada_Sambar_Chutney.JPG" target="_blank" rel="noopener">South Indian Breakast Idli Vada Sambar Chutney.JPG</a> by Saind147, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Dosa_with_Chutney_and_Sambhar.jpg" target="_blank" rel="noopener">Dosa with Chutney and Sambhar.jpg</a> by Pravega, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:South_Indian_Filter_Kaapi_aka_Coffee_01.jpg" target="_blank" rel="noopener">South Indian Filter Kaapi aka Coffee 01.jpg</a> by Nizil Shah, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:Cloudytvm.jpg" target="_blank" rel="noopener">Cloudytvm.jpg</a> by Sakthiprasanna, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li><a href="https://commons.wikimedia.org/wiki/File:A_view_of_Arunachalam_town_from_Arunachalam_hill.jpg" target="_blank" rel="noopener">A view of Arunachalam town from Arunachalam hill.jpg</a> by Adarsh Pidugu, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
-            <li>Room, corridor and reception photos: stills from <a href="https://mixkit.co/" target="_blank" rel="noopener">Mixkit</a> free stock videos (Mixkit licence)</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Aurunachala2013.jpg" target="_blank" rel="noopener">Aurunachala2013.jpg</a> by Lebd, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a> (cropped and animated for the hero video)</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Tiruvannamalai_Hills.jpg" target="_blank" rel="noopener">Tiruvannamalai Hills.jpg</a> by Balu 606902, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> (cropped and animated for the hero video)</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Lenticular_cloud_4.jpg" target="_blank" rel="noopener">Lenticular cloud 4.jpg</a> by L. Shyamal, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a> (cropped and animated for the hero video)</li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Tiruvannamalai,_Arunachala_Hill,_Annamalai_Hill,_Slopes,_India.jpg" target="_blank" rel="noopener">Tiruvannamalai, Arunachala Hill, Annamalai Hill, Slopes, India.jpg</a> by Vyacheslav Argenberg, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Arunachalam_Temple_Gopuram.jpg" target="_blank" rel="noopener">Arunachalam Temple Gopuram.jpg</a> by Shiva16pixels, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Annamalaiyar_Temple_(14).jpg" target="_blank" rel="noopener">Annamalaiyar Temple (14).jpg</a> by Ssriram mt, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:View_of_Arunachala_hill_from_Vayu_Lingam_temple_area.jpg" target="_blank" rel="noopener">View of Arunachala hill from Vayu Lingam temple area.jpg</a> by Adityamadhav83, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Karthikai_Deepam_lit_on_the_sacred_hill.jpg" target="_blank" rel="noopener">Karthikai Deepam lit on the sacred hill.jpg</a> by Prajnaana, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Karthikai_theebanggal.jpg" target="_blank" rel="noopener">Karthikai theebanggal.jpg</a> by Eesha, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:%E0%AE%85%E0%AE%95%E0%AE%B2%E0%AF%8D_%E0%AE%B5%E0%AE%BF%E0%AE%B3%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81.JPG" target="_blank" rel="noopener">அகல் விளக்கு.JPG</a> by Thamiziniyan, <a href="https://creativecommons.org/licenses/by-sa/3.0" target="_blank" rel="noopener">CC BY-SA 3.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Special_Kolam_with_Agal_vilakku_(Oil_Lamp)_for_Kaarthigai_Deepam.jpg" target="_blank" rel="noopener">Special Kolam with Agal vilakku (Oil Lamp) for Kaarthigai Deepam.jpg</a> by ItsShanMani, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Hostel_6-bed_dorm_room,_Kuching,_Malaysia.jpg" target="_blank" rel="noopener">Hostel 6-bed dorm room, Kuching, Malaysia.jpg</a> by Sgroey, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:South_Indian_Breakast_Idli_Vada_Sambar_Chutney.JPG" target="_blank" rel="noopener">South Indian Breakast Idli Vada Sambar Chutney.JPG</a> by Saind147, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:Dosa_with_Chutney_and_Sambhar.jpg" target="_blank" rel="noopener">Dosa with Chutney and Sambhar.jpg</a> by Pravega, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:South_Indian_Filter_Kaapi_aka_Coffee_01.jpg" target="_blank" rel="noopener">South Indian Filter Kaapi aka Coffee 01.jpg</a> by Nizil Shah, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li><a href="https://commons.wikimedia.org/wiki/File:A_view_of_Arunachalam_town_from_Arunachalam_hill.jpg" target="_blank" rel="noopener">A view of Arunachalam town from Arunachalam hill.jpg</a> by Adarsh Pidugu, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a></li>
+          <li>Room, corridor and reception photos: stills from <a href="https://mixkit.co/" target="_blank" rel="noopener">Mixkit</a> free stock videos (Mixkit licence)</li>
         </ul>
-        <p style="font-size:.8rem;margin:0">The hero video is made from the first three photos above and is shared under CC BY-SA.</p>
+        <p style="font-size:.78rem;margin:8px 0 0">The hero video is made from the first three photos above and is shared under CC BY-SA.</p>
       </details>
     </div>
   </footer>
 
-  <a class="float-chat" id="floatChat" href="#book" aria-label="Send a booking enquiry">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.6 7.3L3 21l2.2-5.4A8.5 8.5 0 1 1 21 11.5z"/></svg>
-  </a>
-  <div class="demo-bar" id="demoBar">
-    <span class="long">This is a <b>demo website by Raymelz</b>. Want one for your lodge?</span>
-    <span class="short"><b>Demo by Raymelz</b></span>
-    <a href="https://raymelz.com/resort-hotel-website-design/?utm_source=demo&utm_medium=lodge-demo&utm_campaign=tiruvannamalai" target="_blank" rel="noopener">Get yours from ₹4,999 →</a>
-    <button aria-label="Close" id="closeBar">×</button>
+  <a class="chat" href="#book" aria-label="Send a booking request"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.4A8.5 8.5 0 1 1 20.5 11.6z"/></svg></a>
+  <div class="demo" id="demo">
+    <span class="l">This is a demo website by <b>Raymelz</b>. Want one for your lodge?</span>
+    <span class="s"><b>Demo by Raymelz</b></span>
+    <a href="https://raymelz.com/resort-hotel-website-design/?utm_source=demo&utm_medium=lodge-demo&utm_campaign=tiruvannamalai" target="_blank" rel="noopener">Get yours from ₹4,999</a>
+    <button aria-label="Close" id="demoX">×</button>
   </div>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo"><button aria-label="Close" id="closeLb">×</button><img alt="" id="lbImg"></div>
+  <div class="lightbox" id="lb" role="dialog" aria-label="Photo"><button aria-label="Close" id="lbX">×</button><img alt="" id="lbImg"></div>
 
   <script>
   (function () {
-    var header = document.getElementById("header");
-    function onScroll() { header.classList.toggle("solid", window.scrollY > 60); }
+    var hdr = document.getElementById("hdr");
+    function onScroll() { hdr.classList.toggle("solid", window.scrollY > 40); }
     window.addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    var mb = document.getElementById("menuBtn");
+    mb.addEventListener("click", function () { var o = hdr.classList.toggle("open"); mb.setAttribute("aria-expanded", o); });
+    document.getElementById("nav").addEventListener("click", function (e) { if (e.target.tagName === "A") { hdr.classList.remove("open"); mb.setAttribute("aria-expanded", "false"); } });
 
-    var burger = document.getElementById("burger"), menu = document.getElementById("menu");
-    burger.addEventListener("click", function () { var open = menu.classList.toggle("open"); burger.setAttribute("aria-expanded", open); header.classList.add("solid"); });
-    menu.addEventListener("click", function (e) { if (e.target.tagName === "A") { menu.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); } });
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .12, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+    var gio = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("giri-on"); gio.unobserve(e.target); } }); }, { threshold: .35 });
+    gio.observe(document.getElementById("giriBox"));
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
-    }, { threshold: .12 });
-    document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+    // Room switcher (click + arrow keys)
+    var tabs = [].slice.call(document.querySelectorAll(".tab"));
+    function sel(i, focus) {
+      tabs.forEach(function (t, j) { t.setAttribute("aria-selected", j === i); t.tabIndex = j === i ? 0 : -1; document.getElementById("p" + j).classList.toggle("on", j === i); });
+      if (focus) tabs[i].focus();
+      tabs[i].scrollIntoView({ block: "nearest", inline: "nearest" });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener("click", function () { sel(i); });
+      t.addEventListener("keydown", function (e) { if (e.key === "ArrowDown" || e.key === "ArrowRight") { e.preventDefault(); sel((i + 1) % tabs.length, true); } if (e.key === "ArrowUp" || e.key === "ArrowLeft") { e.preventDefault(); sel((i - 1 + tabs.length) % tabs.length, true); } });
+    });
+    tabs.forEach(function (t, j) { t.tabIndex = j === 0 ? 0 : -1; });
 
-    // Dates: today and tomorrow, never in the past (local date, not UTC)
+    // Dates (local)
     function iso(d) { var z = new Date(d.getTime() - d.getTimezoneOffset() * 6e4); return z.toISOString().slice(0, 10); }
-    var today = new Date(), tomorrow = new Date(Date.now() + 864e5);
+    var today = new Date(), tom = new Date(Date.now() + 864e5);
     ["qIn", "fIn"].forEach(function (id) { var el = document.getElementById(id); el.min = iso(today); el.value = iso(today); });
-    ["qOut", "fOut"].forEach(function (id) { var el = document.getElementById(id); el.min = iso(tomorrow); el.value = iso(tomorrow); });
-
-    document.getElementById("quickBook").addEventListener("submit", function (e) {
+    ["qOut", "fOut"].forEach(function (id) { var el = document.getElementById(id); el.min = iso(tom); el.value = iso(tom); });
+    function $(id) { return document.getElementById(id); }
+    function goBook() { $("book").scrollIntoView(); }
+    $("finder").addEventListener("submit", function (e) {
       e.preventDefault();
-      document.getElementById("fIn").value = document.getElementById("qIn").value;
-      document.getElementById("fOut").value = document.getElementById("qOut").value;
-      var g = document.getElementById("qGuests").value;
-      document.getElementById("fGuests").value = g;
-      if (g.indexOf("dormitory") > -1) document.getElementById("fRoom").value = "Group Dormitory";
-      document.getElementById("book").scrollIntoView();
+      $("fIn").value = $("qIn").value; $("fOut").value = $("qOut").value; $("fGuests").value = $("qGuests").value; $("fRoom").value = $("qRoom").value;
+      if ($("qGuests").value.indexOf("10+") === 0) $("fRoom").value = "Group Dormitory";
+      goBook();
     });
     document.querySelectorAll("[data-room]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var r = b.getAttribute("data-room"), sel = document.getElementById("fRoom");
-        sel.value = r;
-        if (r.indexOf("Deepam") > -1) { document.getElementById("fIn").value = "2026-11-23"; document.getElementById("fOut").value = "2026-11-25"; }
-        if (r === "Group Dormitory") document.getElementById("fGuests").value = "10+ (group dormitory)";
-        document.getElementById("book").scrollIntoView();
+        var r = b.getAttribute("data-room"); $("fRoom").value = r;
+        if (r.indexOf("Deepam") === 0) { $("fIn").value = "2026-11-23"; $("fOut").value = "2026-11-25"; }
+        if (r === "Group Dormitory") $("fGuests").value = "10+ (group)";
+        goBook();
       });
     });
-
-    var form = document.getElementById("requestForm");
-    form.addEventListener("submit", function (e) {
+    $("req").addEventListener("submit", function (e) {
       e.preventDefault();
-      var v = function (id) { return document.getElementById(id).value.trim(); };
-      var msg = "Hi Jyothi Giri Residency, I'd like to book: " + v("fRoom") + ", " + v("fIn") + " to " + v("fOut") + ", " + v("fGuests") + ". Name: " + v("fName") + ", phone: " + v("fPhone") + "." + (v("fMsg") ? " Note: " + v("fMsg") : "");
-      document.getElementById("doneText").textContent = "Thank you, " + v("fName") + ". Your request for the " + v("fRoom") + " from " + v("fIn") + " to " + v("fOut") + " has been sent. We'll confirm on WhatsApp shortly.";
-      document.getElementById("waLink").href = "https://wa.me/?text=" + encodeURIComponent(msg);
-      form.style.display = "none";
-      document.getElementById("done").classList.add("show");
+      var v = function (id) { return $(id).value.trim(); };
+      var msg = "Hi Raymelz Lodge, I'd like to book: " + v("fRoom") + ", " + v("fIn") + " to " + v("fOut") + ", " + v("fGuests") + ". Name: " + v("fName") + ", phone: " + v("fPhone") + "." + (v("fMsg") ? " Note: " + v("fMsg") : "");
+      $("doneText").textContent = "Thank you, " + v("fName") + ". Your request for the " + v("fRoom") + " from " + v("fIn") + " to " + v("fOut") + " has been sent. We'll confirm on WhatsApp shortly.";
+      $("waLink").href = "https://wa.me/?text=" + encodeURIComponent(msg);
+      $("req").style.display = "none"; $("done").classList.add("show");
     });
 
-    // Pournami cards: mark past ones and the next one; update the hero chip
-    var cards = [].slice.call(document.querySelectorAll(".moon-card")), now = Date.now(), next = null;
-    cards.forEach(function (c) {
-      var t = new Date(c.getAttribute("data-utc")).getTime();
-      if (t < now) c.classList.add("past");
-      else if (!next) { next = c; c.classList.add("next"); }
-    });
+    // Pournami table: past / next, hero line
+    var rows = [].slice.call(document.querySelectorAll(".mt tbody tr")), now = Date.now(), next = null;
+    rows.forEach(function (r) { var t = new Date(r.getAttribute("data-utc")).getTime(); if (t < now) r.classList.add("past"); else if (!next) { next = r; r.classList.add("next"); } });
     if (next) {
       var days = Math.ceil((new Date(next.getAttribute("data-start")).getTime() - now) / 864e5);
-      var tag = next.querySelector(".special");
-      document.getElementById("moonText").innerHTML = "Next Pournami Girivalam: <b>" + next.querySelector(".d").textContent + "</b>" +
-        (tag ? " · " + tag.textContent : "") + (days > 0 ? " · " + days + (days === 1 ? " day" : " days") + " to go" : " · today");
+      var tg = next.querySelector(".tg");
+      $("moonText").innerHTML = "Next Pournami Girivalam · <b>" + next.querySelector(".when").textContent.replace(/ \d{4}$/, "") + "</b>" + (tg ? " · " + tg.textContent : "") + (days > 0 ? " · in " + days + (days === 1 ? " day" : " days") : " · today");
     }
 
-    // Deepam countdown (Maha Deepam: Tue 24 Nov 2026, around 6 PM IST)
-    var deepam = new Date("2026-11-24T18:00:00+05:30").getTime();
-    function pad(n) { return (n < 10 ? "0" : "") + n; }
+    // Deepam countdown (Tue 24 Nov 2026, about 6 PM IST)
+    var dp = new Date("2026-11-24T18:00:00+05:30").getTime();
+    function p2(n) { return (n < 10 ? "0" : "") + n; }
     function tick() {
-      var ms = deepam - Date.now();
+      var ms = dp - Date.now();
       if (ms <= 0) {
         var after = Date.now() > new Date("2026-11-26T00:00:00+05:30").getTime();
-        document.getElementById("countdown").style.display = "none";
-        document.getElementById("deepamTitle").textContent = after ? "Thank you, Deepam 2026 guests" : "Maha Deepam is lit today";
-        document.getElementById("deepamLead").textContent = after ? "Rooms for Karthigai Deepam 2027 open soon. Send a request now to get first priority." : "Happy Karthigai Deepam! Om Arunachala Shiva.";
-        clearInterval(timer); return;
+        $("cd").style.display = "none";
+        $("dpLead").textContent = after ? "Thank you to all our Deepam 2026 guests. Rooms for Karthigai Deepam 2027 open soon: send a request to get first priority." : "Happy Karthigai Deepam. Om Arunachala Shiva.";
+        clearInterval(tm); return;
       }
       var s = Math.floor(ms / 1000);
-      document.getElementById("cdD").textContent = Math.floor(s / 86400);
-      document.getElementById("cdH").textContent = pad(Math.floor(s % 86400 / 3600));
-      document.getElementById("cdM").textContent = pad(Math.floor(s % 3600 / 60));
-      document.getElementById("cdS").textContent = pad(s % 60);
+      $("cdD").textContent = Math.floor(s / 86400); $("cdH").textContent = p2(Math.floor(s % 86400 / 3600));
+      $("cdM").textContent = p2(Math.floor(s % 3600 / 60)); $("cdS").textContent = p2(s % 60);
     }
-    var timer = setInterval(tick, 1000); tick();
+    var tm = setInterval(tick, 1000); tick();
 
-    var lb = document.getElementById("lightbox"), lbImg = document.getElementById("lbImg");
-    document.getElementById("gallery-grid").addEventListener("click", function (e) {
-      var img = e.target.closest("button") && e.target.closest("button").querySelector("img");
-      if (!img) return;
-      lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add("open");
-    });
+    // Lightbox
+    var lb = $("lb"), lbImg = $("lbImg");
+    $("bento").addEventListener("click", function (e) { var b = e.target.closest("button"); if (!b) return; var im = b.querySelector("img"); lbImg.src = im.src; lbImg.alt = im.alt; lb.classList.add("open"); });
     function closeLb() { lb.classList.remove("open"); }
-    document.getElementById("closeLb").addEventListener("click", closeLb);
+    $("lbX").addEventListener("click", closeLb);
     lb.addEventListener("click", function (e) { if (e.target === lb) closeLb(); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLb(); });
 
-    var faq = document.querySelector(".faq");
-    faq.addEventListener("toggle", function (e) { if (e.target.open) faq.querySelectorAll("details[open]").forEach(function (d) { if (d !== e.target) d.open = false; }); }, true);
+    // FAQ: one open at a time
+    var qa = document.querySelector(".qa");
+    qa.addEventListener("toggle", function (e) { if (e.target.open) qa.querySelectorAll("details[open]").forEach(function (d) { if (d !== e.target) d.open = false; }); }, true);
 
-    document.getElementById("closeBar").addEventListener("click", function () {
-      document.getElementById("demoBar").style.display = "none"; document.body.style.paddingBottom = "0"; document.getElementById("floatChat").style.bottom = "18px";
-    });
+    $("demoX").addEventListener("click", function () { $("demo").style.display = "none"; document.body.style.paddingBottom = "0"; document.querySelector(".chat").style.bottom = "18px"; });
   })();
   </script>
 </body>
